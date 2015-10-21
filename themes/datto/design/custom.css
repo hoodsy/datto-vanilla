@@ -1,0 +1,176 @@
+/* ---- Edit CSS ----
+
+If you are unfamiliar with CSS, there are some learning resources in the help
+section on the right-hand side of the page.
+
+Here are some things you should know before you begin:
+
+1. Any definitions you enter here will be related to your custom theme. If you
+   change to a different theme, these definitions will no longer be visible on
+   this page. If you switch back to your custom theme, your changes will be
+   present.
+
+2. Your custom css definitions will be included *after* the theme
+   css files. So, your definitions will take precedence over the theme ones.
+
+3. When you preview your changes, you are the only one who can see the preview.
+
+4. Feel free to delete these comments!
+
+*/
+
+
+body {
+  background-color: #F5F6F7;
+}
+
+/**
+ * Layout / lt-*
+ * =====    ----
+**/
+
+.lt-flex-center {
+  display: flex;
+  align-items: center;
+}
+
+/**
+ * FONTS
+ * =====
+**/
+
+html {
+  font-size: 16px;
+}
+
+@font-face {
+  font-family: 'dattofont';
+  font-style: normal;
+  font-weight: 400;
+  src: url(https://www.datto.com/fonts/dattofont-Regular.woff) format('woff');
+}
+
+@font-face {
+  font-family: 'dattofont-bold';
+  font-style: normal;
+  font-weight: 400;
+  src: url(https://www.datto.com/fonts/dattofont-Bold.woff) format('woff');
+}
+
+@font-face {
+  font-family: 'dattofont-condensed-bold';
+  font-style: normal;
+  font-weight: 400;
+  src: url(https://www.datto.com/fonts/dattofont-CondBold.woff) format('woff');
+}
+
+h1, h2, h3 {
+  font-family: "dattofont-condensed-bold";
+  margin: 0;
+}
+
+
+/**
+ * Navbar
+ * ======
+**/
+
+.navbar {
+  background-color: #002a3a; // midnight
+  border-bottom: none;
+}
+.navbar-nav {
+  margin: 0 auto;
+  padding: 15px 0;
+  max-width: 1200px;
+}
+
+.navbar-brand {
+  flex: 3;
+}
+.navbar-logo {
+  display: block;
+  margin: -25px 0;
+  width: 90px;
+  font-size: 90px;
+  color: #FFFFFF;
+}
+.navbar-brand img {
+  display: none;
+}
+
+.navbar-meModule .WhoIs {
+  display: flex;
+  min-height: 0px;
+}
+.navbar-meModule .PhotoWrap {
+  display: none;
+}
+.navbar-meModule .Username {
+  margin-bottom: -4px;
+  padding: 10px 35px;
+  font-family: "dattofont";
+  text-transform: uppercase;
+  color: #FFF;
+}
+
+/**
+ * Landing
+ * =======
+**/
+
+.landing-header {
+  color: white;
+  text-align: center;
+}
+.landing-header h1 {
+  font-size: 3.5em;
+}
+.landing-header h3 {
+  font-size: 2.25em;
+}
+.CategoryList {
+  border: none;
+  box-shadow: none;
+}
+.CategoryList li {
+  padding: 25px !important;
+  margin-bottom: -1px !important;
+  height: 100px;
+  border: 1px solid #B3BEC3 !important;
+  background-color: white !important;
+}
+.CategoryList .ItemContent {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.CategoryList .TitleWrap {
+  flex: 1;
+  margin-top: -8px;
+}
+.CategoryList .TitleWrap a {
+  font-size: 28px;
+  font-family: "dattofont-condensed-bold";
+  color: #199ED9;
+}
+.CategoryList .CategoryDescription,
+.CategoryList .Meta {
+  color: #B3BEC3;
+}
+.CategoryList .Meta {
+  order: -1;
+  flex: 2;
+  margin-top: 13px;
+  font-size: 14px;
+  color: #B3BEC3;
+}
+.CategoryList .Meta .DiscussionCount {
+  flex: 2;
+}
+.CategoryList .Meta .RSS,
+.CategoryList .Meta .CommentCount,
+.CategoryList .Meta .LastCommentDate,
+.CategoryList .ItemContent .Options {
+  display: none;
+}
