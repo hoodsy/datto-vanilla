@@ -19,9 +19,24 @@ Here are some things you should know before you begin:
 
 */
 
+/**
+ * Top Level
+ * =========
+**/
 
 body {
   background-color: #F5F6F7;
+}
+main {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+}
+main.row {
+  flex:3;
+}
+a:hover {
+  color: #002a3a;
 }
 
 /**
@@ -35,7 +50,21 @@ body {
 }
 
 /**
- * FONTS
+ * Colors
+ * =====
+ *
+ * blue: #199ed9;
+ * teal: #54c0c0;
+ * citrus: #b0d156;
+ * midnight: #002a3a;
+ * gray-light: #f5f6f7;
+ * gray: #b3bec3;
+ * gray-dark: #81949b;
+ *
+**/
+
+/**
+ * Fonts
  * =====
 **/
 
@@ -69,6 +98,78 @@ h1, h2, h3 {
   margin: 0;
 }
 
+/**
+ * Buttons
+ * =======
+**/
+
+.Button {
+  display: inline-block;
+  padding: 6px 12px 4px !important;
+  margin-bottom: 0;
+  font-size: 14px !important;
+  font-weight: 400;
+  font-family: 'dattofont';
+  line-height: 1.42857143;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  cursor: pointer;
+  background-color: #199ed9;
+  background-image: none;
+  border: 1px solid #199ed9;
+  border-radius: 0;
+  text-transform: uppercase;
+  color: #FFF;
+  text-shadow: none;
+  box-shadow: none;
+}
+.Button:hover {
+  border: 1px solid #199ed9;
+  color: #199ed9;
+  background-color: #FFF;
+}
+
+/**
+ * Search Bar
+ * ==========
+**/
+
+#Form_Search {
+  width: 50%;
+  padding: 6px 5px 6px 40px;
+  font-size: 1rem;
+  font-family: 'dattofont';
+  color: #ffffff;
+  background-color: transparent;
+  border: none;
+  border-bottom: 3px solid #ffffff;
+}
+#Form_Go {
+  display: none;
+}
+.search-container i {
+  position: relative;
+  left: -23.75%;
+  top: 30px;
+  font-size: 1.75rem;
+}
+input::-webkit-input-placeholder {
+  color: white;
+  opacity: 0.5;
+}
+input::-moz-placeholder {
+  color: white;
+  opacity: 0.5;
+}
+input:-moz-placeholder {   /* Older versions of Firefox */
+  color: white;
+  opacity: 0.5;
+}
+input:-ms-input-placeholder {
+  color: white;
+  opacity: 0.5;
+}
 
 /**
  * Navbar
@@ -79,6 +180,7 @@ h1, h2, h3 {
   background-color: #002a3a; // midnight
   border-bottom: none;
 }
+
 .navbar-nav {
   margin: 0 auto;
   padding: 15px 0;
@@ -86,7 +188,10 @@ h1, h2, h3 {
 }
 
 .navbar-brand {
-  flex: 3;
+  display: flex;
+  align-items: flex-end;
+  width: 75%;
+  margin-right: 50px;
 }
 .navbar-logo {
   display: block;
@@ -95,8 +200,20 @@ h1, h2, h3 {
   font-size: 90px;
   color: #FFFFFF;
 }
+.navbar-logo:hover {
+  color: #FFF;
+}
 .navbar-brand img {
   display: none;
+}
+.navbar-product {
+  margin: 0 0 7px 15px;
+  padding: 1px 0 0 15px;
+  border-left: 1px solid #FFF;
+  font-size: 16px;
+  letter-spacing: 0.1em;
+  color: #FFF;
+  text-transform: uppercase;
 }
 
 .navbar-meModule .WhoIs {
@@ -107,64 +224,83 @@ h1, h2, h3 {
   display: none;
 }
 .navbar-meModule .Username {
-  margin-bottom: -4px;
-  padding: 10px 35px;
+  margin-bottom: -6px;
+  padding: 7px 25px 3px;
   font-family: "dattofont";
   text-transform: uppercase;
   color: #FFF;
 }
+.navbar-meModule .Username:hover {
+  color: #002a3a;
+  background-color: #e5e9eb;
+}
 
 /**
- * Landing
- * =======
+ * Landing / Category List
+ * =======================
 **/
 
-.landing-header {
+.categories-header {
+  padding: 50px 0;
   color: white;
   text-align: center;
+  background-color: #199ed9;
 }
-.landing-header h1 {
+
+.categories-header h1 {
+  margin: 15px 0 20px 0;
   font-size: 3.5em;
+  text-transform: uppercase;
 }
-.landing-header h3 {
+
+.categories-header h3 {
   font-size: 2.25em;
 }
+
+.HomepageTitle {
+  display: none;
+}
+
 .CategoryList {
   border: none;
   box-shadow: none;
 }
-.CategoryList li {
+
+.CategoryList .Depth1 {
+  color: #b3bec3;
+  font-family: 'dattofont-condensed-bold';
+}
+.CategoryList .Depth1 .Category {
+  font-size: 24px;
+  text-transform: uppercase;
+}
+
+.CategoryList .Depth2 {
   padding: 25px !important;
   margin-bottom: -1px !important;
-  height: 100px;
   border: 1px solid #B3BEC3 !important;
   background-color: white !important;
 }
-.CategoryList .ItemContent {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-}
-.CategoryList .TitleWrap {
-  flex: 1;
-  margin-top: -8px;
-}
+
 .CategoryList .TitleWrap a {
   font-size: 28px;
   font-family: "dattofont-condensed-bold";
-  color: #199ED9;
 }
-.CategoryList .CategoryDescription,
-.CategoryList .Meta {
+
+.CategoryList .CategoryDescription {
   color: #B3BEC3;
+  font-size: 14px;
 }
+
 .CategoryList .Meta {
+  /*display: none;*/
   order: -1;
   flex: 2;
   margin-top: 13px;
   font-size: 14px;
   color: #B3BEC3;
 }
+
 .CategoryList .Meta .DiscussionCount {
   flex: 2;
 }
@@ -172,5 +308,86 @@ h1, h2, h3 {
 .CategoryList .Meta .CommentCount,
 .CategoryList .Meta .LastCommentDate,
 .CategoryList .ItemContent .Options {
-  display: none;
+  /*display: none;*/
 }
+
+.site-row {
+  display: flex;
+  width: 100%;
+  margin-top: 25px;
+}
+
+.site-content {
+  width: 75%;
+  margin-right: 50px;
+}
+.site-sidebar {
+
+}
+
+
+/**
+ * Footer
+ * =======
+**/
+
+.footer {
+  position: relative;
+  width: 100%;
+  overflow: auto;
+  background-color: #e5e9eb;
+  margin-top: 5%;
+}
+.footer a {
+  font-size: 14px !important;
+}
+
+.footer-inner {
+  margin: 0 auto;
+  padding: 0 25px;
+  max-width: 1200px;
+}
+
+.footer-left,
+.footer-right {
+  padding: 50px 25px 50px 0px;
+  width: 37.5%;
+  float: left;
+  display: flex;
+}
+
+.footer-left ul:last-child,
+.footer-right ul:last-child {
+  float: right;
+  padding-right: 0;
+}
+
+.footer ul {
+  float: left;
+/*  padding: 50px 5% 30px; */
+  padding: 0 25px 0 0;
+  margin: 0;
+  width: 50%;
+}
+
+.footer ul li:first-child {
+ font-weight: 600;
+ text-transform: uppercase;
+ padding-bottom: 10px;
+}
+
+.footer ul li a {
+  font-size: 1.5rem;
+  color: #9aa9af;
+}
+.footer ul li a:hover {
+  color: $color_2;
+}
+
+.footer .submit-a-request {
+  font-size: 12px;
+  float: left;
+  border-color: #9aa9af !important;
+}
+
+
