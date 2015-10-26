@@ -34,10 +34,11 @@
         <h3>What's on your mind?</h3>
         <div class="search-container">
           <i class="fontify-search-icon"></i>
-          {searchbox}
+          {searchbox placeholder="Search the Partner Community"}
         </div>
       </div>
     {/if}
+
 
     <main class="container site-container" role="main">
 

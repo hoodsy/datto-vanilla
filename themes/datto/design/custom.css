@@ -135,10 +135,13 @@ h1, h2, h3 {
  * ==========
 **/
 
+.search-container {
+  margin-top: 25px;
+}
 #Form_Search {
-  width: 50%;
-  padding: 6px 5px 6px 40px;
-  font-size: 1rem;
+  width: 38.5rem;
+  padding: 6px 5px 8px 40px;
+  font-size: 1.15rem;
   font-family: 'dattofont';
   color: #ffffff;
   background-color: transparent;
@@ -150,9 +153,9 @@ h1, h2, h3 {
 }
 .search-container i {
   position: relative;
-  left: -23.75%;
-  top: 30px;
-  font-size: 1.75rem;
+  left: -18.25rem;
+  top: 28px;
+  font-size: 1.5rem;
 }
 input::-webkit-input-placeholder {
   color: white;
@@ -325,6 +328,21 @@ input:-ms-input-placeholder {
 
 }
 
+/* RSS Feeds / Recent discussions per category */
+.categories-rss {
+
+}
+
+rss item {
+  font-family: "dattofont";
+}
+
+rss item link,
+rss item category,
+rss item description,
+rss item guid {
+  display: none;
+}
 
 /**
  * Footer

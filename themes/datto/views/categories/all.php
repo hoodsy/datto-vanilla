@@ -1,5 +1,73 @@
 <?php if (!defined('APPLICATION')) exit();
 
+$CategoriesURL = 'http://localhost:8888/vanilla/';
+
+// RSS Data Formatter
+function formatRssData ($data)
+{
+  // Split data on url string
+  $recentPosts = explode('http://localhost:8888/vanilla/', $data);
+  // $recentPosts = preg_split('/'.$CategoriesURL.'/', $data);
+  // Retrieve and format 3 most recent discussions
+  $recentPosts = array($recentPosts[3], $recentPosts[4], $recentPosts[5]);
+  for ($i=0; $i < 3; $i++) {
+    $recentPosts[$i] = cleanDiscussionMetaData($recentPosts[$i]);
+    $recentPosts[$i] = buildDiscussionTemplate($recentPosts[$i]);
+  }
+
+  return $recentPosts;
+}
+
+function formatTitle ($discussionTitle)
+{
+  $discussionTitle = explode('/', $discussionTitle)[2];
+  $discussionTitle = rtrim($discussionTitle, "<");
+  $discussionTitle = str_replace('-', ' ', $discussionTitle);
+  return $discussionTitle;
+}
+
+function formatUpdatedAt ($discussionItems)
+{
+  for ($i=2; $i < 6; $i++) {
+    $discussionItems[1] .= ' '.$discussionItems[$i];
+  }
+  return $discussionItems[1];
+}
+
+function cleanDiscussionMetaData ($discussionItems)
+{
+  // Split string on spaces
+  $discussionItems = preg_split('/\s+/', $discussionItems);
+
+  // Format / retrieve desirable discussion metadata
+  $discussionTitle = formatTitle($discussionItems[0]);
+  $discussionUpdatedAt = formatUpdatedAt($discussionItems);
+  $discussionAuthor = $discussionItems[9];
+
+  return array(
+    $discussionTitle,
+    $discussionUpdatedAt,
+    $discussionAuthor
+  );
+}
+
+// TODO: get link to actual article
+function buildDiscussionTemplate ($discussionMetaData)
+{
+  $titleTemplate = '<p class="discussion-meta-title">'.$discussionMetaData[0].'</p>';
+  $updatedAtTemplate = '<p class="discussion-meta-updated">'.$discussionMetaData[1].'</p>';
+  $authorTemplate = '<p class="discussion-meta-author">by '.$discussionMetaData[2].'</p>';
+  return (
+    '<div class="discussion-meta">'
+    .$titleTemplate
+    .$updatedAtTemplate
+    .$authorTemplate
+    .'</div>'
+  );
+}
+// End RSS Formatter
+
+
 if (!function_exists('GetOptions'))
     include $this->fetchViewLocation('helper_functions', 'categories');
 
@@ -25,6 +93,7 @@ $this->EventArguments['NumRows'] = count($this->data('Categories'));
 echo '<ul class="DataList CategoryList'.($DoHeadings ? ' CategoryListWithHeadings' : '').'">';
 $Alt = FALSE;
 foreach ($this->data('Categories') as $CategoryRow) {
+    global $CategoriesURL;
     $Category = (object)$CategoryRow;
 
     $this->EventArguments['CatList'] = &$CatList;
@@ -56,6 +125,12 @@ foreach ($this->data('Categories') as $CategoryRow) {
             $LastComment = UserBuilder($Category, 'Last');
             $AltCss = $Alt ? ' Alt' : '';
             $Alt = !$Alt;
+
+            // Get RSS Feed (XML) data for Category
+            $rssData = file_get_contents("http://localhost:8888/vanilla/index.php?p=/categories/".$Category->UrlCode."/feed.rss");
+            $rssData = formatRssData($rssData);
+            // print_r(formatRssData($rssData));
+
             $CatList .= '<li id="Category_'.$CategoryID.'" class="'.$CssClass.'">
                <div class="ItemContent Category">'
                 .GetOptions($Category, $this)
@@ -65,11 +140,18 @@ foreach ($this->data('Categories') as $CategoryRow) {
                 .'</div>
                   <div class="CategoryDescription">'
                 .$Category->Description
-                .'</div>
-                  <div class="Meta">
+                .'</div>'
+
+                // Display RSS Data
+                .$rssData[0]
+                .$rssData[1]
+                .$rssData[2]
+
+                  .'<div class="Meta">
                      <span class="MItem RSS">'.anchor(img('applications/dashboard/design/images/rss.gif', array('alt' => T('RSS Feed'))), '/categories/'.$Category->UrlCode.'/feed.rss', '', array('title' => T('RSS Feed'))).'</span>
                      <span class="MItem DiscussionCount">'.sprintf(Plural(number_format($Category->CountAllDiscussions), '%s discussion', '%s discussions'), $Category->CountDiscussions).'</span>
                      <span class="MItem CommentCount">'.sprintf(Plural(number_format($Category->CountAllComments), '%s comment', '%s comments'), $Category->CountComments).'</span>';
+
             if ($Category->LastTitle != '') {
                 $CatList .= '<span class="MItem LastDiscussionTitle">'.sprintf(
                         t('Most recent: %1$s by %2$s'),
