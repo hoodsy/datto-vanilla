@@ -279,7 +279,7 @@ input:-ms-input-placeholder {
 }
 
 .CategoryList .Depth2 {
-  padding: 25px !important;
+  padding: 25px 25px 0!important;
   margin-bottom: -1px !important;
   border: 1px solid #B3BEC3 !important;
   background-color: white !important;
@@ -296,7 +296,7 @@ input:-ms-input-placeholder {
 }
 
 .CategoryList .Meta {
-  /*display: none;*/
+  display: none;
   order: -1;
   flex: 2;
   margin-top: 13px;
@@ -311,7 +311,12 @@ input:-ms-input-placeholder {
 .CategoryList .Meta .CommentCount,
 .CategoryList .Meta .LastCommentDate,
 .CategoryList .ItemContent .Options {
-  /*display: none;*/
+  display: none;
+}
+
+.CategoryDescription {
+  padding-bottom: 25px;
+  border-bottom: 2px solid #b3bec3;
 }
 
 .site-row {
@@ -329,19 +334,21 @@ input:-ms-input-placeholder {
 }
 
 /* RSS Feeds / Recent discussions per category */
-.categories-rss {
-
+.discussion-meta {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 15px 0;
+  border-top: 1px solid #b3bec3;
+}
+.discussion-meta p {
+  margin: 0;
 }
 
-rss item {
-  font-family: "dattofont";
-}
-
-rss item link,
-rss item category,
-rss item description,
-rss item guid {
-  display: none;
+.discussion-meta-title {
+  width: 100%;
+  font-size: 1rem;
+  color: #199ed9;
+  text-transform: capitalize;
 }
 
 /**

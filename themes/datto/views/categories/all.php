@@ -54,7 +54,7 @@ function cleanDiscussionMetaData ($discussionItems)
 // TODO: get link to actual article
 function buildDiscussionTemplate ($discussionMetaData)
 {
-  $titleTemplate = '<p class="discussion-meta-title">'.$discussionMetaData[0].'</p>';
+  $titleTemplate = '<a class="discussion-meta-title">'.$discussionMetaData[0].'</a>';
   $updatedAtTemplate = '<p class="discussion-meta-updated">'.$discussionMetaData[1].'</p>';
   $authorTemplate = '<p class="discussion-meta-author">by '.$discussionMetaData[2].'</p>';
   return (
