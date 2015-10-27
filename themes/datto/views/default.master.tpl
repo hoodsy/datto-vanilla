@@ -56,9 +56,17 @@
         </section>
 
         <aside class="site-sidebar">
-          <!-- {asset name="Panel"} -->
-          <!-- {module name="PromotedContentModule" Selector="Role" ContentType="discussions" Selection= "Administrator" Limit="3"} -->
           {module name="NewDiscussionModule"}
+          {module name="PromotedContentModule"
+            Selector="Category"
+            ContentType="discussions"
+            Selection="Announcements"
+            Limit="5"
+          }
+          <a class="Button sidebar-coc"
+            href="">
+            Code of Conduct
+          </a>
         </aside>
 
       </div>

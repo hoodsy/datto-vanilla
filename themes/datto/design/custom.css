@@ -109,7 +109,7 @@ h1, h2, h3 {
 .Button,
 .Button:focus {
   display: inline-block;
-  padding: 6px 12px 4px !important;
+  padding: 6px 15px 4px !important;
   margin-bottom: 0;
   font-size: 14px !important;
   font-weight: 400;
@@ -342,6 +342,7 @@ input:-ms-input-placeholder {
 .CategoryList .Depth1 {
   color: #b3bec3;
   font-family: 'dattofont-condensed-bold';
+  border: none;
 }
 .CategoryList .Depth1 .Category {
   font-size: 24px;
@@ -423,10 +424,55 @@ input:-ms-input-placeholder {
 .discussion-meta-created {
   padding-right: 5px;
 }
+.CategoryList .Category-announcements {
+  display: none;
+}
+
+/**
+ * Sidebar
+ * =======
+**/
+
+.site-sidebar {
+  margin: 38px 0 0;
+}
+
+.BoxPromoted {
+  margin: 35px 0;
+}
+.BoxPromoted h4 {
+  margin-bottom: 10px;
+  color: #b3bec3;
+  font-family: 'dattofont-condensed-bold';
+  font-size: 24px;
+  text-transform: uppercase;
+}
+.BoxPromoted .PromotedGroup .Item {
+  padding: 0;
+  border: none !important;
+}
+.BoxPromoted .PromotedGroup .Item div {
+  display: none;
+}
+.BoxPromoted .PromotedGroup .Item .Title {
+  display: block;
+  margin-bottom: 5px;
+  font-size: 1rem;
+  font-family: "dattofont";
+  line-height: 1.5rem;
+}
+
+.sidebar-coc {
+  color: #199ed9 !important;
+  border: 1px solid #199ed9;
+  border-color: #199ed9;
+  background-color: #FFF;
+  background: #FFF;
+}
 
 /**
  * Footer
- * =======
+ * ======
 **/
 
 .footer {

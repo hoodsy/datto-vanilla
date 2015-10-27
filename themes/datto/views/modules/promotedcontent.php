@@ -3,7 +3,7 @@ require_once Gdn::controller()->fetchViewLocation('helper_functions', 'modules',
 
 ?>
 <div class="Box BoxPromoted">
-    <?php echo panelHeading(t('Promoted Content')); ?>
+    <?php echo panelHeading(t('Announcements')); ?>
     <div class="PanelInfo DataList">
         <?php
         $Content = $this->data('Content');
