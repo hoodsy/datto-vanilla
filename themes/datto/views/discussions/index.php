@@ -2,13 +2,15 @@
 $Session = Gdn::session();
 include_once $this->fetchViewLocation('helper_functions', 'discussions', 'vanilla');
 
-echo '<h1 class="H HomepageTitle">'.
+echo '<div class="discussions-header">';
+echo '<h1 class="H HomepageTitle show-title">'.
     AdminCheck(NULL, array('', ' ')).
     $this->data('Title').
     '</h1>';
 
 $Description = $this->data('Category.Description', $this->Description());
 echo wrapIf(Gdn_Format::htmlFilter($Description), 'div', array('class' => 'P PageDescription'));
+echo '</div>';
 
 $this->fireEvent('AfterPageTitle');
 
@@ -20,10 +22,10 @@ $PagerOptions = array('Wrapper' => '<span class="PagerNub">&#160;</span><div %1$
 if ($this->data('_PagerUrl'))
     $PagerOptions['Url'] = $this->data('_PagerUrl');
 
-echo '<div class="PageControls Top">';
-PagerModule::write($PagerOptions);
-echo Gdn_Theme::Module('NewDiscussionModule', $this->data('_NewDiscussionProperties', array('CssClass' => 'Button Action Primary')));
-echo '</div>';
+// echo '<div class="PageControls Top">';
+// PagerModule::write($PagerOptions);
+// echo Gdn_Theme::Module('NewDiscussionModule', $this->data('_NewDiscussionProperties', array('CssClass' => 'Button Action Primary')));
+// echo '</div>';
 
 if ($this->DiscussionData->numRows() > 0 || (isset($this->AnnounceData) && is_object($this->AnnounceData) && $this->AnnounceData->numRows() > 0)) {
     ?>
@@ -34,7 +36,7 @@ if ($this->DiscussionData->numRows() > 0 || (isset($this->AnnounceData) && is_ob
 
     echo '<div class="PageControls Bottom">';
     PagerModule::write($PagerOptions);
-    echo Gdn_Theme::Module('NewDiscussionModule', $this->data('_NewDiscussionProperties', array('CssClass' => 'Button Action Primary')));
+    // echo Gdn_Theme::Module('NewDiscussionModule', $this->data('_NewDiscussionProperties', array('CssClass' => 'Button Action Primary')));
     echo '</div>';
 
 } else {

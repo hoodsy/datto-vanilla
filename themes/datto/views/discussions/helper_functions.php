@@ -137,6 +137,15 @@ if (!function_exists('WriteDiscussion')):
    </span>
 
             <div class="ItemContent Discussion">
+
+                    <!-- User Photo -->
+                    <?php
+                    echo '<div class="discussion-author">';
+                    echo userPhoto($First, array('Size' => 'Medium'));
+                    echo '</div>';
+                    ?>
+              <div class="discussion-info">
+
                 <div class="Title">
                     <?php
                     echo AdminCheck($Discussion, array('', ' ')).
@@ -153,9 +162,10 @@ if (!function_exists('WriteDiscussion')):
                             '%s view html', '%s views html', t('%s view'), t('%s views')),
                             BigPlural($Discussion->CountViews, '%s view'));
                         ?></span>
-         <span class="MItem MCount CommentCount"><?php
+         <span class="MItem MCount CommentCount fontify-message-icon"><?php
              printf(PluralTranslate($Discussion->CountComments,
-                 '%s comment html', '%s comments html', t('%s comment'), t('%s comments')),
+                 '%s comment html', '%s comments html', t('%s'), t('%s')),
+                 // '%s comment html', '%s comments html', t('%s comment'), t('%s comments')),
                  BigPlural($Discussion->CountComments, '%s comment'));
              ?></span>
          <span class="MItem MCount DiscussionScore Hidden"><?php
@@ -190,6 +200,8 @@ if (!function_exists('WriteDiscussion')):
                     $Sender->fireEvent('DiscussionMeta');
                     ?>
                 </div>
+              </div>
+
             </div>
             <?php $Sender->fireEvent('AfterDiscussionContent'); ?>
         </li>

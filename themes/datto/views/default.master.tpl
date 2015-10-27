@@ -41,15 +41,15 @@
 
 
     <main class="container site-container" role="main">
-
       <!-- Breadcrumbs -->
-      {if !InSection("CategoryList")}
+      {if InSection("Discussion")}
         <nav class="trail">
           {breadcrumbs}
         </nav>
       {/if}
 
       <div class="site-row">
+      <!-- <h1>{asset name="Title"}</h1> -->
 
         <section class="site-content">
           {asset name="Content"}
