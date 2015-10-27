@@ -102,8 +102,8 @@ h1, h2, h3 {
 }
 
 /**
- * Buttons
- * =======
+ * Buttons / Dropdowns
+ * ===================
 **/
 
 .Button,
@@ -162,6 +162,17 @@ h1, h2, h3 {
   margin: 0;
 }
 
+/**
+ * Forms
+ * =====
+**/
+
+form {
+  font-family: "dattofont" !important;
+  font-size: 1rem !important;
+  line-height: 1.5rem !important;
+  color: #002a3a !important;
+}
 /**
  * Search Bar
  * ==========
@@ -260,16 +271,41 @@ input:-ms-input-placeholder {
 .navbar-meModule .PhotoWrap {
   display: none;
 }
-.navbar-meModule .Username {
+.navbar-meModule .Username,
+.MeBox-SignIn .SignInLinks a {
   margin-bottom: -6px;
-  padding: 7px 25px 3px;
+  padding: 10px 25px 7px;
   font-family: "dattofont";
   text-transform: uppercase;
   color: #FFF;
 }
-.navbar-meModule .Username:hover {
+.navbar-meModule .Username:hover,
+.MeBox-SignIn .SignInLinks a:hover {
   color: #002a3a;
   background-color: #e5e9eb;
+}
+.navbar-meModule .MeBox-SignIn {
+  display: block;
+}
+.MeBox-SignIn .Bullet {
+  display: none;
+}
+
+.Popup .Border {
+  background: none;
+  padding: 0;
+}
+.Popup .Content {
+  padding: 15px 25px;
+  font-family: "dattofont";
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
+.Popup .CreateAccount {
+  margin-top: 5px;
+}
+.Overlay {
+  background-color: rgba(0,42,58,0.25);
 }
 
 /**
@@ -363,9 +399,6 @@ input:-ms-input-placeholder {
   width: 75%;
   margin-right: 50px;
 }
-.site-sidebar {
-
-}
 
 /* RSS Feeds / Recent discussions per category */
 .discussion-meta {
@@ -442,11 +475,10 @@ input:-ms-input-placeholder {
 }
 
 .footer ul li a {
-  font-size: 1.5rem;
   color: #9aa9af;
 }
 .footer ul li a:hover {
-  color: $color_2;
+  color: #199ed9;
 }
 
 .footer .submit-a-request {
