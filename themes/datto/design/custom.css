@@ -35,6 +35,7 @@ main {
 main.row {
   flex:3;
 }
+a,
 a:visited {
   color: #199ed9;
 }
