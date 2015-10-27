@@ -35,6 +35,9 @@ main {
 main.row {
   flex:3;
 }
+a:visited {
+  color: #199ed9;
+}
 a:hover {
   color: #002a3a;
 }
@@ -103,7 +106,8 @@ h1, h2, h3 {
  * =======
 **/
 
-.Button {
+.Button,
+.Button:focus {
   display: inline-block;
   padding: 6px 12px 4px !important;
   margin-bottom: 0;
@@ -124,10 +128,38 @@ h1, h2, h3 {
   text-shadow: none;
   box-shadow: none;
 }
-.Button:hover {
-  border: 1px solid #199ed9;
+.Button:visited {
+  color: #FFF;
+}
+.Button:hover,
+.Button:active {
   color: #199ed9;
-  background-color: #FFF;
+  border: 1px solid #199ed9 !important;
+  border-color: #199ed9 !important;
+  background-color: #FFF !important;
+  background: #FFF !important;
+}
+
+.MenuItems {
+  margin: 0;
+  padding: 0;
+  font-size: 12px !important;
+  font-weight: 400;
+  font-family: 'dattofont';
+  line-height: 1.42857143;
+  border: 0;
+}
+.MenuItems a {
+  padding: 10px 20px !important;
+  color: #002a3a !important;
+  text-transform: uppercase;
+  border: none;
+}
+.MenuItems a:hover {
+  background-color: #e5e9eb !important;
+}
+.MenuItems hr {
+  margin: 0;
 }
 
 /**
@@ -203,7 +235,9 @@ input:-ms-input-placeholder {
   font-size: 90px;
   color: #FFFFFF;
 }
-.navbar-logo:hover {
+.navbar-logo:hover,
+.navbar-logo:active,
+.navbar-logo:visited {
   color: #FFF;
 }
 .navbar-brand img {

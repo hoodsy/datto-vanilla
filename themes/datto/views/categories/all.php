@@ -7,7 +7,6 @@ function formatRssData ($data)
 {
   // Split data on url string
   $recentPosts = explode(BASE_URL, $data);
-  // print_r($recentPosts);
 
   // Retrieve and format 3 most recent discussions
   $recentPosts = array($recentPosts[3], $recentPosts[4], $recentPosts[5]);
@@ -66,7 +65,6 @@ function cleanDiscussionMetaData ($discussionItems)
   );
 }
 
-// TODO: get link to actual article
 function buildDiscussionTemplate ($discussionMetaData)
 {
   $titleTemplate = (
@@ -185,7 +183,6 @@ foreach ($this->data('Categories') as $CategoryRow) {
             // Get RSS Feed (XML) data for Category
             $rssData = file_get_contents(BASE_URL."index.php?p=/categories/".$Category->UrlCode."/feed.rss");
             $rssData = formatRssData($rssData);
-            // print_r(formatRssData($rssData));
 
             $CatList .= '<li id="Category_'.$CategoryID.'" class="'.$CssClass.'">
                <div class="ItemContent Category">'
