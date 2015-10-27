@@ -339,6 +339,8 @@ input:-ms-input-placeholder {
   flex-wrap: wrap;
   padding: 15px 0;
   border-top: 1px solid #b3bec3;
+  font-size: 0.75rem;
+  color: #b3bec3;
 }
 .discussion-meta p {
   margin: 0;
@@ -349,6 +351,10 @@ input:-ms-input-placeholder {
   font-size: 1rem;
   color: #199ed9;
   text-transform: capitalize;
+}
+
+.discussion-meta-created {
+  padding-right: 5px;
 }
 
 /**

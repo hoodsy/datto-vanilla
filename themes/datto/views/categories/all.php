@@ -1,13 +1,14 @@
 <?php if (!defined('APPLICATION')) exit();
 
-$CategoriesURL = 'http://localhost:8888/vanilla/';
+define('BASE_URL', 'http://localhost:8888/vanilla/');
 
 // RSS Data Formatter
 function formatRssData ($data)
 {
   // Split data on url string
-  $recentPosts = explode('http://localhost:8888/vanilla/', $data);
-  // $recentPosts = preg_split('/'.$CategoriesURL.'/', $data);
+  $recentPosts = explode(BASE_URL, $data);
+  // print_r($recentPosts);
+
   // Retrieve and format 3 most recent discussions
   $recentPosts = array($recentPosts[3], $recentPosts[4], $recentPosts[5]);
   for ($i=0; $i < 3; $i++) {
@@ -18,20 +19,34 @@ function formatRssData ($data)
   return $recentPosts;
 }
 
-function formatTitle ($discussionTitle)
+function formatTitle ($discussionUrl)
 {
-  $discussionTitle = explode('/', $discussionTitle)[2];
-  $discussionTitle = rtrim($discussionTitle, "<");
+  $discussionUrl = str_replace('</link>', '', $discussionUrl);
+  $discussionTitle = explode('/', $discussionUrl);
+  $discussionTitle = rtrim($discussionTitle[2], "<");
   $discussionTitle = str_replace('-', ' ', $discussionTitle);
-  return $discussionTitle;
+  return array(
+    'text' => $discussionTitle,
+    'url' => $discussionUrl
+  );
 }
 
-function formatUpdatedAt ($discussionItems)
+function formatCreated ($discussionItems)
 {
-  for ($i=2; $i < 6; $i++) {
-    $discussionItems[1] .= ' '.$discussionItems[$i];
+  $discussionCreated = $discussionItems[2];
+  for ($i=3; $i < 6; $i++) {
+    $discussionCreated .= ' '.$discussionItems[$i];
   }
-  return $discussionItems[1];
+  return humanTiming(
+    strtotime($discussionCreated)
+  );
+}
+
+function formatAuthor ($discussionAuthor)
+{
+  $discussionAuthor = str_replace('<dc:creator>', '', $discussionAuthor);
+  $discussionAuthor = str_replace('</dc:creator>', '', $discussionAuthor);
+  return $discussionAuthor;
 }
 
 function cleanDiscussionMetaData ($discussionItems)
@@ -41,29 +56,70 @@ function cleanDiscussionMetaData ($discussionItems)
 
   // Format / retrieve desirable discussion metadata
   $discussionTitle = formatTitle($discussionItems[0]);
-  $discussionUpdatedAt = formatUpdatedAt($discussionItems);
-  $discussionAuthor = $discussionItems[9];
+  $discussionCreated = formatCreated($discussionItems);
+  $discussionAuthor = formatAuthor($discussionItems[9]);
 
   return array(
-    $discussionTitle,
-    $discussionUpdatedAt,
-    $discussionAuthor
+    'title' => $discussionTitle,
+    'created' => $discussionCreated,
+    'author' => $discussionAuthor
   );
 }
 
 // TODO: get link to actual article
 function buildDiscussionTemplate ($discussionMetaData)
 {
-  $titleTemplate = '<a class="discussion-meta-title">'.$discussionMetaData[0].'</a>';
-  $updatedAtTemplate = '<p class="discussion-meta-updated">'.$discussionMetaData[1].'</p>';
-  $authorTemplate = '<p class="discussion-meta-author">by '.$discussionMetaData[2].'</p>';
+  $titleTemplate = (
+    '<a '
+      .'class="discussion-meta-title"'
+      .'href="'.BASE_URL.$discussionMetaData['title']['url'].'">'
+      .$discussionMetaData['title']['text']
+    .'</a>'
+  );
+  $createdTemplate = (
+    '<p '
+      .'class="discussion-meta-created">'
+      .$discussionMetaData['created']
+      .' ago by'
+    .'</p>'
+  );
+  $authorTemplate = (
+    '<a '
+      .'class="discussion-meta-author"'
+      .'href="'.BASE_URL.'index.php?p=/profile/'.$discussionMetaData[2].'">'
+      .$discussionMetaData['author']
+    .'</a>'
+  );
+
   return (
     '<div class="discussion-meta">'
-    .$titleTemplate
-    .$updatedAtTemplate
-    .$authorTemplate
+      .$titleTemplate
+      .$createdTemplate
+      .$authorTemplate
     .'</div>'
   );
+}
+
+// Calculate 'x minutes ago' from current time
+function humanTiming ($time)
+{
+    $time = time() - $time; // to get the time since that moment
+    $time = ($time<1)? 1 : $time;
+    $tokens = array (
+        31536000 => 'year',
+        2592000 => 'month',
+        604800 => 'week',
+        86400 => 'day',
+        3600 => 'hour',
+        60 => 'minute',
+        1 => 'second'
+    );
+
+    foreach ($tokens as $unit => $text) {
+        if ($time < $unit) continue;
+        $numberOfUnits = floor($time / $unit);
+        return $numberOfUnits.' '.$text.(($numberOfUnits>1)?'s':'');
+    }
 }
 // End RSS Formatter
 
@@ -127,7 +183,7 @@ foreach ($this->data('Categories') as $CategoryRow) {
             $Alt = !$Alt;
 
             // Get RSS Feed (XML) data for Category
-            $rssData = file_get_contents("http://localhost:8888/vanilla/index.php?p=/categories/".$Category->UrlCode."/feed.rss");
+            $rssData = file_get_contents(BASE_URL."index.php?p=/categories/".$Category->UrlCode."/feed.rss");
             $rssData = formatRssData($rssData);
             // print_r(formatRssData($rssData));
 
