@@ -307,7 +307,7 @@ if (!function_exists('Tag')):
         if (!$CssClass)
             $CssClass = "Tag-$Code";
 
-        return ' <span class="Tag '.$CssClass.'" title="'.htmlspecialchars(t($Code)).'">'.t($Code).'</span> ';
+        return ' <span class="Tag '.$CssClass.' fontify-promoted-icon" title="'.htmlspecialchars(t($Code)).'">'.t($Code).'</span> ';
     }
 endif;
 
@@ -315,7 +315,7 @@ if (!function_exists('WriteTags')):
     function writeTags($Discussion) {
         Gdn::controller()->fireEvent('BeforeDiscussionMeta');
 
-        echo Tag($Discussion, 'Announce', 'Announcement');
+        echo Tag($Discussion, 'Announce', '');
         echo Tag($Discussion, 'Closed', 'Closed');
 
         Gdn::controller()->fireEvent('AfterDiscussionLabels');
