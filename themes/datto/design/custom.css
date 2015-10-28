@@ -621,7 +621,8 @@ input:-ms-input-placeholder {
   text-transform: uppercase;
 }
 
-.Discussions>.Item {
+.Discussions>.Item,
+#search-results>.Item {
   height: 45px;
   padding: 15px;
   margin-bottom: -1px;
@@ -682,6 +683,17 @@ input:-ms-input-placeholder {
 }
 .discussion-info {
   margin-bottom: -6px;
+}
+
+/**
+ * Search Results List
+ * ================
+**/
+
+mark {
+  background: none;
+  color: #54c0c0;
+  font-weight: bold;
 }
 
 /**

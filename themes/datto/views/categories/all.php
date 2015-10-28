@@ -15,9 +15,6 @@ function formatRssData ($data)
     $recentPosts[$i] = buildDiscussionTemplate($recentPosts[$i]);
   }
 
-  // print_r('======');
-  // print_r($recentPosts);
-  // print_r('======');
   return $recentPosts;
 }
 
