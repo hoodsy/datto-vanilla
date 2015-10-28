@@ -2,15 +2,15 @@
 $Session = Gdn::session();
 include_once $this->fetchViewLocation('helper_functions', 'discussions', 'vanilla');
 
-echo '<div class="discussions-header">';
-echo '<h1 class="H HomepageTitle show-title">'.
-    AdminCheck(NULL, array('', ' ')).
-    $this->data('Title').
-    '</h1>';
+// echo '<div class="discussions-header">';
+// echo '<h1 class="H HomepageTitle show-title">'.
+//     AdminCheck(NULL, array('', ' ')).
+//     $this->data('Title').
+//     '</h1>';
 
-$Description = $this->data('Category.Description', $this->Description());
-echo wrapIf(Gdn_Format::htmlFilter($Description), 'div', array('class' => 'P PageDescription'));
-echo '</div>';
+// $Description = $this->data('Category.Description', $this->Description());
+// echo wrapIf(Gdn_Format::htmlFilter($Description), 'div', array('class' => 'P PageDescription'));
+// echo '</div>';
 
 $this->fireEvent('AfterPageTitle');
 

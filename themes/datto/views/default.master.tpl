@@ -28,7 +28,9 @@
       </nav>
 
     </header>
-    {if InSection("CategoryList")}
+    <!-- Headers -->
+    <!-- CategoryList -->
+    {if $Categories}
       <div class="categories-header">
         <h1>Welcome to the Partner Community</h1>
         <h3>What's on your mind?</h3>
@@ -38,19 +40,31 @@
         </div>
       </div>
     {/if}
-
+    <!-- DiscussionsList -->
+    {if $Discussions}
+      <div class="discussions-header">
+        <div class="discussions-header-container">
+          <div class="discussions-header-text">
+            <h3>{$Title}</h3>
+            <p>{$Category.Description}</p>
+          </div>
+          <div class="discussions-search-container">
+            <i class="fontify-search-icon"></i>
+            {searchbox placeholder="Search the Community"}
+          </div>
+        </div>
+      </div>
+    {/if}
 
     <main class="container site-container" role="main">
       <!-- Breadcrumbs -->
-      {if InSection("Discussion")}
+      <!-- {if InSection("Discussion")}
         <nav class="trail">
           {breadcrumbs}
         </nav>
-      {/if}
+      {/if} -->
 
       <div class="site-row">
-      <h1></h1>
-
         <section class="site-content">
           {asset name="Content"}
         </section>

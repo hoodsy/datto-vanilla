@@ -125,7 +125,7 @@ h1, h2, h3 {
   display: inline-block;
   padding: 6px 15px 4px !important;
   margin-bottom: 0;
-  font-size: 14px !important;
+  font-size: 0.875rem !important;
   font-weight: 400;
   font-family: 'dattofont';
   line-height: 1.42857143;
@@ -159,7 +159,7 @@ h1, h2, h3 {
 .MenuItems {
   margin: 0;
   padding: 0;
-  font-size: 12px !important;
+  font-size: 0.75rem !important;
   font-weight: 400;
   font-family: 'dattofont';
   line-height: 1.42857143;
@@ -197,10 +197,15 @@ form {
 .search-container {
   margin-top: 25px;
 }
-#Form_Search {
+.discussions-search-container {
+  margin-top: -33px;
+}
+.search-container #Form_Search {
   width: 38.5rem;
+}
+#Form_Search {
   padding: 6px 5px 8px 40px;
-  font-size: 1.15rem;
+  font-size: 1rem;
   font-family: 'dattofont';
   color: #ffffff;
   background-color: transparent;
@@ -213,6 +218,11 @@ form {
 .search-container i {
   position: relative;
   left: -18.25rem;
+  top: 28px;
+  font-size: 1.5rem;
+}
+.discussions-search-container i {
+  position: relative;
   top: 28px;
   font-size: 1.5rem;
 }
@@ -274,7 +284,7 @@ input:-ms-input-placeholder {
   margin: 0 0 7px 15px;
   padding: 1px 0 0 15px;
   border-left: 1px solid #FFF;
-  font-size: 16px;
+  font-size: 1rem;
   letter-spacing: 0.1em;
   color: #FFF;
   text-transform: uppercase;
@@ -284,6 +294,7 @@ input:-ms-input-placeholder {
   display: flex;
   align-items: center;
   min-height: 0px;
+  margin-top: -7px;
 }
 .navbar-meModule .PhotoWrap {
   display: none;
@@ -369,7 +380,7 @@ input:-ms-input-placeholder {
   margin-bottom: 10px;
   color: #b3bec3;
   font-family: 'dattofont-condensed-bold';
-  font-size: 24px;
+  font-size: 1.5rem;
   text-transform: uppercase;
 }
 .BoxPromoted .PromotedGroup .Item {
@@ -408,7 +419,7 @@ input:-ms-input-placeholder {
   margin-top: 5%;
 }
 .footer a {
-  font-size: 14px !important;
+  font-size: 0.875rem !important;
 }
 
 .footer-inner {
@@ -452,12 +463,6 @@ input:-ms-input-placeholder {
   color: #199ed9;
 }
 
-.footer .submit-a-request {
-  font-size: 12px;
-  float: left;
-  border-color: #9aa9af !important;
-}
-
 /**
  * Landing / Category List
  * =======================
@@ -499,7 +504,7 @@ input:-ms-input-placeholder {
   padding: 0;
 }
 .CategoryList .Depth1 .Category {
-  font-size: 24px;
+  font-size: 1.5rem;
   text-transform: uppercase;
 }
 
@@ -511,13 +516,13 @@ input:-ms-input-placeholder {
 }
 
 .CategoryList .TitleWrap a {
-  font-size: 28px;
+  font-size: 1.75rem;
   font-family: "dattofont-condensed-bold";
 }
 
 .CategoryList .CategoryDescription {
   color: #B3BEC3;
-  font-size: 14px;
+  font-size: 0.875rem;
 }
 
 .CategoryList .Meta {
@@ -525,7 +530,7 @@ input:-ms-input-placeholder {
   order: -1;
   flex: 2;
   margin-top: 13px;
-  font-size: 14px;
+  font-size: 0.875rem;
   color: #B3BEC3;
 }
 
@@ -547,7 +552,7 @@ input:-ms-input-placeholder {
 .site-row {
   display: flex;
   width: 100%;
-  margin-top: 25px;
+  margin: 25px 0 30vh;
 }
 
 .site-content {
@@ -572,7 +577,7 @@ input:-ms-input-placeholder {
   width: 100%;
   font-size: 1rem;
   color: #199ed9;
-  text-transform: capitalize;
+  /*text-transform: capitalize;*/
 }
 
 .discussion-meta-created {
@@ -586,6 +591,28 @@ input:-ms-input-placeholder {
  * Discussions List
  * ================
 **/
+
+.discussions-header {
+  color: white;
+  text-align: left;
+  background-color: #199ed9;
+}
+.discussions-header-container {
+  display: flex;
+  align-items: center;
+  margin: 0 auto;
+  padding: 50px 0;
+  max-width: 1200px;
+}
+
+.discussions-header-text {
+  width: 75%;
+  margin-right: 50px;
+}
+
+.discussions-header h3 {
+  font-size: 2.25rem;
+}
 
 .Discussions>.Item {
   height: 45px;
