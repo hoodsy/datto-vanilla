@@ -12,6 +12,8 @@ include_once $this->fetchViewLocation('helper_functions', 'discussions', 'vanill
 // echo wrapIf(Gdn_Format::htmlFilter($Description), 'div', array('class' => 'P PageDescription'));
 // echo '</div>';
 
+echo '<h4 class="discussions-label">Discussions</h4>';
+
 $this->fireEvent('AfterPageTitle');
 
 include $this->fetchViewLocation('Subtree', 'Categories', 'Vanilla');

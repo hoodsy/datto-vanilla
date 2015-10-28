@@ -613,6 +613,13 @@ input:-ms-input-placeholder {
 .discussions-header h3 {
   font-size: 2.25rem;
 }
+.discussions-label {
+  margin: 0 0 12.5px;
+  color: #b3bec3;
+  font-family: 'dattofont-condensed-bold';
+  font-size: 1.5rem;
+  text-transform: uppercase;
+}
 
 .Discussions>.Item {
   height: 45px;
