@@ -684,8 +684,37 @@ input:-ms-input-placeholder {
   margin-bottom: -6px;
 }
 
+/**
+ * Responsive Styles
+ * ================
+**/
 
+@media (max-width: 1199px) {
+  main,
+  .discussions-header-container,
+  .navbar-nav {
+    max-width: 1000px;
+  }
 
+  .site-content,
+  .discussions-header-text,
+  .navbar-brand {
+    width: 70%;
+  }
+}
+@media (max-width: 999px) {
+  main,
+  .discussions-header-container,
+  .navbar-nav {
+    max-width: 800px;
+  }
+
+  .site-content,
+  .discussions-header-text,
+  .navbar-brand {
+    width: 64%;
+  }
+}
 
 
 
