@@ -15,6 +15,9 @@ function formatRssData ($data)
     $recentPosts[$i] = buildDiscussionTemplate($recentPosts[$i]);
   }
 
+  // print_r('======');
+  // print_r($recentPosts);
+  // print_r('======');
   return $recentPosts;
 }
 
@@ -67,6 +70,14 @@ function cleanDiscussionMetaData ($discussionItems)
 
 function buildDiscussionTemplate ($discussionMetaData)
 {
+  // If there is no RSS data, hide item
+  if (   $discussionMetaData['author'] == ''
+      || $discussionMetaData['created'] == ''
+      || $discussionMetaData['title']['url'] == '')
+  {
+    return '<div class="discussion-meta hide"></div>';
+  }
+
   $titleTemplate = (
     '<a '
       .'class="discussion-meta-title"'

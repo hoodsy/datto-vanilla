@@ -49,7 +49,7 @@
       {/if}
 
       <div class="site-row">
-      <!-- <h1>{asset name="Title"}</h1> -->
+      <h1></h1>
 
         <section class="site-content">
           {asset name="Content"}

@@ -104,6 +104,18 @@ h1, h2, h3 {
 }
 
 /**
+ * Utility
+ * =======
+**/
+
+.show {
+  display: block !important;
+}
+.hide {
+  display: none !important;
+}
+
+/**
  * Buttons / Dropdowns
  * ===================
 **/
@@ -270,10 +282,17 @@ input:-ms-input-placeholder {
 
 .navbar-meModule .WhoIs {
   display: flex;
+  align-items: center;
   min-height: 0px;
 }
 .navbar-meModule .PhotoWrap {
   display: none;
+}
+.navbar-meModule .Username {
+  order: 5;
+}
+.navbar-meModule .MeMenu {
+  margin-top: 10px;
 }
 .navbar-meModule .Username,
 .MeBox-SignIn .SignInLinks a {
@@ -312,13 +331,35 @@ input:-ms-input-placeholder {
   background-color: rgba(0,42,58,0.25);
 }
 
+.MeBox .Flyout {
+  width: initial;
+  min-width: 100px;
+  left: initial;
+  right: -112px;
+  white-space: nowrap;
+  font-size: 0.875rem;
+}
+.Flyout .Item {
+  margin: 0;
+  padding: 5px 15px;
+  -ms-text-align-last: auto;
+}
+.Flyout:before,
+.Flyout:after {
+  left: initial;
+  right: 118px;
+}
+.PopList .Item.Title {
+  padding: 5px 14px 2px;
+}
+
 /**
  * Sidebar
  * =======
 **/
 
 .site-sidebar {
-  margin: 38px 0 0;
+  margin: 62px 0 0;
 }
 
 .BoxPromoted {
@@ -442,9 +483,6 @@ input:-ms-input-placeholder {
 .HomepageTitle {
   display: none;
 }
-.show-title {
-  display: block;
-}
 
 .CategoryList {
   border: none;
@@ -452,6 +490,7 @@ input:-ms-input-placeholder {
 }
 
 .CategoryList .Depth1 {
+  padding: 25px 0 0;
   color: #b3bec3;
   font-family: 'dattofont-condensed-bold';
   border: none;
@@ -463,7 +502,7 @@ input:-ms-input-placeholder {
 
 .CategoryList .Depth2 {
   padding: 25px 25px 0!important;
-  margin-bottom: -1px !important;
+  margin: 12.5px 0 25px !important;
   border: 1px solid #B3BEC3 !important;
   background-color: white !important;
 }
@@ -505,7 +544,6 @@ input:-ms-input-placeholder {
 .site-row {
   display: flex;
   width: 100%;
-  margin-top: 25px;
 }
 
 .site-content {
