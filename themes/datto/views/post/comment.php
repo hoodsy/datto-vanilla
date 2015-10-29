@@ -7,7 +7,7 @@ $this->EventArguments['FormCssClass'] = 'MessageForm CommentForm FormTitleWrappe
 $this->fireEvent('BeforeCommentForm');
 ?>
 <div class="<?php echo $this->EventArguments['FormCssClass']; ?>">
-    <h2 class="H"><?php echo t($Editing ? 'Edit Comment' : 'Leave a Comment'); ?></h2>
+    <h4 class="H discussions-label"><?php echo t($Editing ? 'Edit Comment' : 'Leave a Comment'); ?></h4>
 
     <div class="CommentFormWrap">
         <?php if (Gdn::session()->isValid()): ?>

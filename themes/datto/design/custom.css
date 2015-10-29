@@ -27,7 +27,7 @@ Here are some things you should know before you begin:
 body {
   font-size: 16px;
   font-family: "dattofont";
-  font-weight: 400;
+  font-weight: 500;
   line-height: 1.5rem;
   color: #002a3a;
   background-color: #F5F6F7;
@@ -58,6 +58,13 @@ a:visited {
 }
 a:hover {
   color: #002a3a;
+}
+
+textarea {
+  color: #002a3a;
+}
+textarea:focus {
+  background: #fbfbfb;
 }
 
 /**
@@ -92,21 +99,21 @@ a:hover {
 @font-face {
   font-family: 'dattofont';
   font-style: normal;
-  font-weight: 400;
+  font-weight: 500;
   src: url(https://www.datto.com/fonts/dattofont-Regular.woff) format('woff');
 }
 
 @font-face {
   font-family: 'dattofont-bold';
   font-style: normal;
-  font-weight: 400;
+  font-weight: 500;
   src: url(https://www.datto.com/fonts/dattofont-Bold.woff) format('woff');
 }
 
 @font-face {
   font-family: 'dattofont-condensed-bold';
   font-style: normal;
-  font-weight: 400;
+  font-weight: 500;
   src: url(https://www.datto.com/fonts/dattofont-CondBold.woff) format('woff');
 }
 
@@ -182,7 +189,7 @@ h1, h2, h3 {
   margin: 0;
   padding: 0;
   font-size: 0.75rem !important;
-  font-weight: 400;
+  font-weight: 500;
   font-family: 'dattofont';
   line-height: 1.42857143;
   border: 0;
@@ -765,9 +772,10 @@ mark {
  * ===============
 **/
 
-.MessageList {
+.MessageList,
+.CommentFormWrap {
   padding: 25px 50px;
-  margin: 37px 0 0;
+  margin-bottom: 50px;
   background-color: #FFF;
   border: 1px solid #b3bec3;
 }
@@ -808,6 +816,17 @@ mark {
 }
 .MessageList .ItemDiscussion .Message p {
   margin: 15px 0;
+}
+
+.CommentsWrap .MessageList .Item {
+  padding: 0;
+}
+
+.FormWrapper {
+  background: #FFF;
+}
+.Form-Header .Author .PhotoWrap {
+  margin: 0;
 }
 
 /**

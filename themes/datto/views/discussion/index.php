@@ -4,6 +4,7 @@ if (!function_exists('WriteComment'))
     include $this->fetchViewLocation('helper_functions', 'discussion');
 
 // Wrap the discussion related content in a div.
+echo '<h4 class="discussions-label">Discussion</h4>';
 echo '<div class="MessageList Discussion">';
 
 // Write the page title.
@@ -36,6 +37,7 @@ if ($this->data('Page') == 1) {
     echo '</div>'; // close discussion wrap
 }
 
+echo '<h4 class="discussions-label">Comments</h4>';
 echo '<div class="CommentsWrap">';
 
 // Write the comments.
@@ -47,7 +49,7 @@ echo '</span>';
 
 echo '<div class="DataBox DataBox-Comments">';
 if ($this->data('Comments')->numRows() > 0)
-    echo '<h2 class="CommentHeading">'.$this->data('_CommentsHeader', t('Comments')).'</h2>';
+    // echo '<h2 class="CommentHeading">'.$this->data('_CommentsHeader', t('Comments')).'</h2>';
 ?>
     <ul class="MessageList DataList Comments">
         <?php include $this->fetchViewLocation('comments'); ?>
