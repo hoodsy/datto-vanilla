@@ -474,6 +474,23 @@ input:-ms-input-placeholder {
 }
 
 /**
+ * Breadcrumbs
+ * ===========
+**/
+
+.Breadcrumbs {
+  display: block;
+  margin: 5px 0;
+}
+.Breadcrumbs a {
+  color: #FFF;
+}
+.Breadcrumbs a:hover,
+.Breadcrumbs a:active {
+  color: #002a3a;
+}
+
+/**
  * Landing / Category List
  * =======================
 **/
