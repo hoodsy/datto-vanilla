@@ -659,7 +659,6 @@ input:-ms-input-placeholder {
 .Discussions .Discussion .Title a {
   font-size: 1.125rem;
   font-weight: 400;
-  text-transform: capitalize;
 }
 .Discussions .Discussion .Meta {
   font-size: 0.875rem;
@@ -707,13 +706,14 @@ input:-ms-input-placeholder {
 
 mark {
   background: none;
-  color: #54c0c0;
+  color: #b0d156;
   font-weight: bold;
 }
 
 .Discussion .Summary {
   align-self: flex-end;
   flex: 1;
+  font-size: 0.875rem;
   text-align: right;
 }
 
