@@ -31,6 +31,8 @@ body {
   line-height: 1.5rem;
   color: #002a3a;
   background-color: #F5F6F7;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 main {
   max-width: 1200px;
@@ -724,7 +726,7 @@ input:-ms-input-placeholder {
 mark {
   background: none;
   color: #b0d156;
-  font-weight: bold;
+  font-size: 1rem;
 }
 
 .Discussion .Summary {
