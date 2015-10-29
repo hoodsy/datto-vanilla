@@ -35,12 +35,22 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 main {
-  max-width: 1200px;
   margin: 0 auto;
   display: flex;
 }
 main.row {
   flex:3;
+}
+main,
+.discussions-header-container,
+.navbar-nav,
+.footer-inner {
+  max-width: 1000px;
+}
+.site-content,
+.discussions-header-text,
+.navbar-brand {
+  width: 70%;
 }
 a,
 a:visited {
@@ -132,7 +142,7 @@ h1, h2, h3 {
   padding: 6px 15px 4px !important;
   margin-bottom: 0;
   font-size: 0.875rem !important;
-  font-weight: 400;
+  font-weight: 600;
   font-family: 'dattofont';
   line-height: 1.42857143;
   text-align: center;
@@ -268,13 +278,11 @@ input:-ms-input-placeholder {
 .navbar-nav {
   margin: 0 auto;
   padding: 15px 0;
-  max-width: 1200px;
 }
 
 .navbar-brand {
   display: flex;
   align-items: flex-end;
-  width: 75%;
   margin-right: 50px;
 }
 .navbar-logo {
@@ -437,7 +445,6 @@ input:-ms-input-placeholder {
 .footer-inner {
   margin: 0 auto;
   padding: 0 25px;
-  max-width: 1200px;
 }
 
 .footer-left,
@@ -485,6 +492,7 @@ input:-ms-input-placeholder {
   margin: 5px 0;
 }
 .Breadcrumbs a {
+  text-transform: uppercase;
   color: #FFF;
 }
 .Breadcrumbs a:hover,
@@ -585,7 +593,6 @@ input:-ms-input-placeholder {
 }
 
 .site-content {
-  width: 75%;
   margin-right: 50px;
 }
 
@@ -606,7 +613,7 @@ input:-ms-input-placeholder {
   width: 100%;
   font-size: 1rem;
   color: #199ed9;
-  /*text-transform: capitalize;*/
+  font-weight: 600;
 }
 
 .discussion-meta-created {
@@ -631,11 +638,9 @@ input:-ms-input-placeholder {
   align-items: center;
   margin: 0 auto;
   padding: 50px 0;
-  max-width: 1200px;
 }
 
 .discussions-header-text {
-  width: 75%;
   margin-right: 50px;
 }
 
@@ -677,7 +682,7 @@ input:-ms-input-placeholder {
 }
 .Discussions .Discussion .Title a {
   font-size: 1.125rem;
-  font-weight: 400;
+  font-weight: 600;
 }
 .Discussions .Discussion .Meta {
   font-size: 0.875rem;
@@ -732,8 +737,12 @@ mark {
 .Discussion .Summary {
   align-self: flex-end;
   flex: 1;
+  padding-left: 25%;
   font-size: 0.875rem;
   text-align: right;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
 }
 
 .Media {
@@ -752,6 +761,56 @@ mark {
 }
 
 /**
+ * Discussion View
+ * ===============
+**/
+
+.MessageList {
+  padding: 25px 50px;
+  margin: 37px 0 0;
+  background-color: #FFF;
+  border: 1px solid #b3bec3;
+}
+.MessageList .PageTitle h1 {
+  font-size: 2rem;
+  line-height: 3rem;
+}
+.MessageList .ItemDiscussion {
+  padding: 0;
+  margin: 0;
+}
+.MessageList .ItemDiscussion .Item-Header {
+  padding: 15px 0;
+  margin: 0;
+  border-bottom: 1px solid #b3bec3;
+}
+.MessageList .ItemDiscussion .Item-Header .Author a {
+  font-size: 1rem;
+}
+.MessageList .ItemDiscussion .Item-Header .Author img {
+  margin-top: 4px;
+}
+.MessageList .ItemDiscussion .Item-Header a {
+  font-size: 0.875rem;
+}
+.MessageList .ItemDiscussion .Item-Header .Meta {
+  margin-top: 1px;
+  font-size: 0.875rem;
+}
+.MessageList .ItemDiscussion .Item-Header .Meta .MItem {
+  margin: 0;
+}
+.MessageList .ItemDiscussion .Item-Header .Meta .IPAddress {
+  display: none;
+}
+.MessageList .ItemDiscussion .Message {
+  font-size: 1rem;
+}
+.MessageList .ItemDiscussion .Message p {
+  margin: 15px 0;
+}
+
+/**
  * Responsive Styles
  * ================
 **/
@@ -759,7 +818,8 @@ mark {
 @media (max-width: 1199px) {
   main,
   .discussions-header-container,
-  .navbar-nav {
+  .navbar-nav,
+  .footer-inner {
     max-width: 1000px;
   }
 
@@ -772,7 +832,8 @@ mark {
 @media (max-width: 999px) {
   main,
   .discussions-header-container,
-  .navbar-nav {
+  .navbar-nav,
+  .footer-inner {
     max-width: 800px;
   }
 
