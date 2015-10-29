@@ -55,6 +55,21 @@
         </div>
       </div>
     {/if}
+    <!-- Search Results -->
+    {if $Title == 'Search'}
+      <div class="discussions-header">
+        <div class="discussions-header-container">
+          <div class="discussions-header-text">
+            <h3>Search Results</h3>
+            <p>{$Category.Description}</p>
+          </div>
+          <div class="discussions-search-container">
+            <i class="fontify-search-icon"></i>
+            {searchbox placeholder="Search the Community"}
+          </div>
+        </div>
+      </div>
+    {/if}
 
     <main class="container site-container" role="main">
       <!-- Breadcrumbs -->

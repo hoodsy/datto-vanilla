@@ -1,5 +1,5 @@
 <?php if (!defined('APPLICATION')) exit(); ?>
-    <div class="SearchForm">
+    <div class="SearchForm hide">
         <?php
         $Form = $this->Form;
         $Form->InputPrefix = '';

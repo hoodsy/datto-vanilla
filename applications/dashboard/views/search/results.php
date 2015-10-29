@@ -1,45 +1,52 @@
 <?php if (!defined('APPLICATION')) exit(); ?>
 
-<?php if (!count($this->data('SearchResults')) && $this->data('SearchTerm'))
+<?php
+
+  if (!count($this->data('SearchResults')) && $this->data('SearchTerm')) {
     echo '<p class="NoResults">', sprintf(t('No results for %s.', 'No results for <b>%s</b>.'), $this->data('SearchTerm')), '</p>';
+  }
+  else {
+    echo '<h4 class="discussions-label">Discussions</h4>';
+  }
+
 ?>
-    <ol id="search-results" class="DataList DataList-Search" start="<?php echo $this->data('From'); ?>">
+    <ol id="search-results" class="DataList DataList-Search Discussions" start="<?php echo $this->data('From'); ?>">
         <?php foreach ($this->data('SearchResults') as $Row): ?>
             <li class="Item Item-Search">
-                <h3><?php echo anchor(htmlspecialchars($Row['Title']), $Row['Url']); ?></h3>
 
-                <div class="Item-Body Media">
-                    <?php
-                    $Photo = userPhoto($Row, array('LinkClass' => 'Img'));
-                    if ($Photo) {
-                        echo $Photo;
-                    }
-                    ?>
+                <div class="Item-Body Media Discussion">
+                    <div class="discussion-author">
+                      <?php
+                                          $Photo = userPhoto($Row, array('LinkClass' => 'Img'));
+                                          if ($Photo) {
+                                              echo $Photo;
+                                          }
+                                          ?>
+                    </div>
                     <div class="Media-Body">
+                      <div class="Title"><?php echo anchor(htmlspecialchars($Row['Title']), $Row['Url']); ?></div>
+
                         <div class="Meta">
                             <?php
-                            echo ' <span class="MItem-Author">'.
+                            echo ' <span class="MItem MItem-Author">'.
                                 sprintf(t('by %s'), userAnchor($Row)).
                                 '</span>';
 
                             echo Bullet(' ');
-                            echo ' <span clsss="MItem-DateInserted">'.
+                            echo ' <span clsss="MItem MItem-DateInserted">'.
                                 Gdn_Format::date($Row['DateInserted'], 'html').
                                 '</span> ';
 
 
                             if (isset($Row['Breadcrumbs'])) {
                                 echo Bullet(' ');
-                                echo ' <span class="MItem-Location">'.Gdn_Theme::Breadcrumbs($Row['Breadcrumbs'], false).'</span> ';
+                                echo ' <span class="MItem MItem-Location">'.Gdn_Theme::Breadcrumbs($Row['Breadcrumbs'], false).'</span> ';
                             }
 
                             if (isset($Row['Notes'])) {
                                 echo ' <span class="Aside Debug">debug('.$Row['Notes'].')</span>';
                             }
                             ?>
-                        </div>
-                        <div class="Summary">
-                            <?php echo $Row['Summary']; ?>
                         </div>
                         <?php
                         $Count = val('Count', $Row);
@@ -69,6 +76,9 @@
                             echo '<div>'.anchor(Plural($Count, '%s result', '%s results'), $url).'</div>';
                         }
                         ?>
+                    </div>
+                    <div class="Summary">
+                        <?php echo $Row['Summary']; ?>
                     </div>
                 </div>
             </li>
