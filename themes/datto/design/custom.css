@@ -878,6 +878,13 @@ mark {
   top: -5px;
 }
 
+.FormWrapper {
+  background: #FFF;
+  padding-bottom: 0 !important;
+}
+.FormWrapper .Buttons {
+  padding: 0;
+}
 .FormWrapper .Buttons .Back {
   display: none;
 }
@@ -897,9 +904,6 @@ mark {
   color: #002a3a;
   background-color: #e5e9eb !important;
   border: 1px solid #e5e9eb !important;
-}
-.FormWrapper {
-  background: #FFF;
 }
 .Form-Header .Author .PhotoWrap {
   margin: 0;
