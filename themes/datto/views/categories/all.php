@@ -50,13 +50,17 @@ function formatAuthor ($discussionAuthor)
 
 function cleanDiscussionMetaData ($discussionItems)
 {
-  // Split string on spaces
+
+  // Remove Category name and split string on spaces
+  $discussionItems = preg_replace('/(<category>(.*)<\/category>)/', '', $discussionItems);
   $discussionItems = preg_split('/\s+/', $discussionItems);
 
   // Format / retrieve desirable discussion metadata
   $discussionTitle = formatTitle($discussionItems[0]);
   $discussionCreated = formatCreated($discussionItems);
-  $discussionAuthor = formatAuthor($discussionItems[9]);
+  $discussionAuthor = formatAuthor($discussionItems[7]);
+
+  // print_r($discussionItems);
 
   return array(
     'title' => $discussionTitle,
@@ -75,6 +79,9 @@ function buildDiscussionTemplate ($discussionMetaData)
     return '<div class="discussion-meta hide"></div>';
   }
 
+  // print_r('\n=======');
+  // print_r($discussionMetaData['author']);
+
   $titleTemplate = (
     '<a '
       .'class="discussion-meta-title"'
@@ -92,7 +99,7 @@ function buildDiscussionTemplate ($discussionMetaData)
   $authorTemplate = (
     '<a '
       .'class="discussion-meta-author"'
-      .'href="'.BASE_URL.'index.php?p=/profile/'.$discussionMetaData[2].'">'
+      .'href="'.BASE_URL.'index.php?p=/profile/'.$discussionMetaData['author'].'">'
       .$discussionMetaData['author']
     .'</a>'
   );
