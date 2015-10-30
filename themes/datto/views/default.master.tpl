@@ -70,12 +70,11 @@
       </div>
     {/if}
     <!-- Discussion -->
-    {if $Discussion}
+    {if $Discussion || ($Title == 'New Discussion')}
       <div class="discussions-header">
         <div class="discussions-header-container">
           <div class="discussions-header-text">
-            <h3>{$Category.Name}</h3>
-            <!-- <p>{$Category.Description}</p> -->
+            <h3>What's on your mind?</h3>
             {breadcrumbs}
           </div>
           <div class="discussions-search-container">

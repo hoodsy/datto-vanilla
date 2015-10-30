@@ -60,11 +60,19 @@ a:hover {
   color: #002a3a;
 }
 
-textarea {
+textarea,
+input {
   color: #002a3a;
+  padding: 10px !important;
 }
-textarea:focus {
-  background: #fbfbfb;
+textarea:focus,
+.TextBoxWrapper input:focus {
+  background: #fbfbfb !important;
+}
+
+select {
+  font-family: "dattofont";
+  font-size: 1.5rem;
 }
 
 .Meta,
@@ -244,7 +252,7 @@ form {
   width: 38.5rem;
 }
 #Form_Search {
-  padding: 6px 5px 8px 40px;
+  padding: 6px 5px 8px 40px !important;
   font-size: 1rem;
   font-family: 'dattofont';
   color: #ffffff;
@@ -870,9 +878,6 @@ mark {
   top: -5px;
 }
 
-.FormWrapper .Buttons {
-
-}
 .FormWrapper .Buttons .Back {
   display: none;
 }
@@ -880,24 +885,45 @@ mark {
   display: none;
 }
 .FormWrapper .Buttons .PreviewButton,
-.FormWrapper .Buttons .WriteButton {
-  padding: 8px 15px 7px;
-  font-size: 0.875rem;
-  line-height: 1.428571;
-  text-transform: uppercase;
-  font-weight: bold;
+.FormWrapper .Buttons .WriteButton,
+.FormWrapper .Buttons .Cancel  {
+  color: #199ed9;
   border: 1px solid transparent;
+  background-color: transparent;
 }
 .FormWrapper .Buttons .PreviewButton:hover,
-.FormWrapper .Buttons .WriteButton:hover {
-  background-color: #e5e9eb;
+.FormWrapper .Buttons .WriteButton:hover,
+.FormWrapper .Buttons .Cancel:hover  {
+  color: #002a3a;
+  background-color: #e5e9eb !important;
+  border: 1px solid #e5e9eb !important;
 }
-
 .FormWrapper {
   background: #FFF;
 }
 .Form-Header .Author .PhotoWrap {
   margin: 0;
+}
+.FormWrapper .Category {
+  display: flex;
+  flex-direction: column;
+  width: 35%;
+}
+.FormWrapper label,
+.PostOptions li>b {
+  font-size: 0.875rem;
+  color: #81949b;
+}
+.FormWrapper div>label,
+.PostOptions li>b {
+  text-transform: uppercase;
+}
+.DiscussionForm .PostOptions>li {
+  display: flex;
+  flex-direction: column;
+}
+.DiscussionForm .PostOptions>li .List {
+  margin: 2px 0 10px;
 }
 
 /**
