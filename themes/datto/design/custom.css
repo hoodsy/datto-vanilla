@@ -570,17 +570,33 @@ input:-ms-input-placeholder {
 }
 
 .CategoryList .Meta {
-  display: none;
-  order: -1;
-  flex: 2;
   margin-top: 13px;
   font-size: 0.875rem;
   color: #B3BEC3;
 }
+.CategoryList .Meta .MItem {
+  display: none;
+}
 
 .CategoryList .Meta .DiscussionCount {
-  flex: 2;
+  display: block;
+  position: absolute;
+  top: 23px;
+  right: 16px;
+  font-size: 2.75rem;
 }
+
+.CategoryList .Meta .DiscussionCount span {
+  position: absolute;
+  top: 2px;
+  left: 1px;
+  width: 30px;
+  font-size: 0.875rem;
+  font-weight: bold;
+  text-align: center;
+  cursor: default;
+}
+
 .CategoryList .Meta .RSS,
 .CategoryList .Meta .CommentCount,
 .CategoryList .Meta .LastCommentDate,
@@ -710,6 +726,7 @@ input:-ms-input-placeholder {
   left: 2px;
   width: 30px;
   font-size: 0.875rem;
+  font-weight: bold;
   text-align: center;
   cursor: default;
 }
