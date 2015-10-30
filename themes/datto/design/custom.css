@@ -608,7 +608,7 @@ input:-ms-input-placeholder {
 .CategoryList .Meta .DiscussionCount span {
   position: absolute;
   top: 4px;
-  left: 2px;
+  left: 3px;
   width: 30px;
   font-size: 0.875rem;
   font-weight: bold;
