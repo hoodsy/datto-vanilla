@@ -67,6 +67,17 @@ textarea:focus {
   background: #fbfbfb;
 }
 
+.Meta,
+.MItem,
+.discussion-meta,
+.CategoryDescription {
+  color: #81949b !important;
+}
+.CommentCount,
+.DiscussionCount {
+  color: #b3bec3 !important ;
+}
+
 /**
  * Layout / lt-*
  * =====    ----
@@ -831,12 +842,28 @@ mark {
 .MessageList .ItemDiscussion .Message {
   font-size: 1rem;
 }
-.MessageList .ItemDiscussion .Message p {
+.MessageList .ItemDiscussion .Message p,
+.CommentsWrap .MessageList .Item .Message p {
   margin: 15px 0;
 }
 
 .CommentsWrap .MessageList .Item {
   padding: 0;
+  margin-bottom: 25px;
+  border-bottom: 1px solid #b3bec3;
+}
+.CommentsWrap .MessageList .Item:last-child {
+  margin-bottom: 0;
+  border-bottom: none;
+}
+.CommentsWrap .MessageList .Item .Reactions {
+  display: none;
+}
+.CommentsWrap .MessageList .Item .Meta a {
+  font-size: 0.875rem;
+}
+.CommentsWrap .MessageList .Item .Meta .IPAddress {
+  display: none;
 }
 
 .FormWrapper {
