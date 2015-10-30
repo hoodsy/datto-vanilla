@@ -67,8 +67,8 @@ $this->fireEvent('BeforeCommentForm');
                     */
 
                     if (!$Editing && $Session->isValid()) {
-                        echo ' '.anchor(t('Preview'), '#', 'Button PreviewButton')."\n";
-                        echo ' '.anchor(t('Edit'), '#', 'Button WriteButton Hidden')."\n";
+                        echo ' '.anchor(t('Preview'), '#', 'PreviewButton')."\n";
+                        echo ' '.anchor(t('Edit'), '#', 'WriteButton Hidden')."\n";
                         if ($NewOrDraft)
                             echo ' '.anchor(t('Save Draft'), '#', 'Button DraftButton')."\n";
                     }

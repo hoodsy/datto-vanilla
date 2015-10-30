@@ -865,6 +865,33 @@ mark {
 .CommentsWrap .MessageList .Item .Meta .IPAddress {
   display: none;
 }
+.CommentsWrap .MessageList .Item .Username {
+  position: relative;
+  top: -5px;
+}
+
+.FormWrapper .Buttons {
+
+}
+.FormWrapper .Buttons .Back {
+  display: none;
+}
+.FormWrapper .Buttons .DraftButton {
+  display: none;
+}
+.FormWrapper .Buttons .PreviewButton,
+.FormWrapper .Buttons .WriteButton {
+  padding: 8px 15px 7px;
+  font-size: 0.875rem;
+  line-height: 1.428571;
+  text-transform: uppercase;
+  font-weight: bold;
+  border: 1px solid transparent;
+}
+.FormWrapper .Buttons .PreviewButton:hover,
+.FormWrapper .Buttons .WriteButton:hover {
+  background-color: #e5e9eb;
+}
 
 .FormWrapper {
   background: #FFF;
