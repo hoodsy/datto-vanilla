@@ -422,6 +422,13 @@ input:-ms-input-placeholder {
 .PopList .Item.Title {
   padding: 5px 14px 2px;
 }
+.PopList .ItemContent {
+  margin: 0;
+  line-height: inherit;
+}
+.PopList a {
+  color: #199ed9;
+}
 
 /**
  * Sidebar
@@ -958,12 +965,15 @@ a.Cancel {
  * Profile View
  * ============
 **/
-
+.site-content .Profile {
+  margin-top: -28px;
+}
 .Profile .About .Name,
 .Profile .About .Joined,
 .Profile .About .Visits,
 .Profile .About .LastActive,
-.Profile .About .IP {
+.Profile .About .IP,
+.Profile .About .Email {
   display: none;
 }
 .Profile .MeBox {
@@ -972,6 +982,11 @@ a.Cancel {
 .UserBox,
 .MeBox {
   margin: 0;
+}
+.ProfileOptions {
+  position: relative;
+  float: none;
+  left: 91.75%;
 }
 
 .site-content .BoxProfileFilter {
@@ -1023,6 +1038,48 @@ a.Cancel {
   border-radius: 0;
 }
 
+.User {
+  display: flex;
+  align-items: center;
+}
+.profile-info {
+  margin: 0 15px;
+}
+.profile-info h4 {
+  margin: 0;
+}
+.profile-email {
+  font-size: 0.875rem;
+  color: #b3bec3;
+  font-family: "dattofont";
+  font-weight: 400;
+}
+.profile-username {
+  font-size: 1.125rem;
+  font-family: "dattofont";
+  font-weight: 400;
+}
+
+.Profile .P {
+  margin: 0;
+  align-self: flex-end;
+  flex: 1;
+}
+.Profile .About .H {
+  display: none;
+}
+.Profile .About .About {
+  float: right;
+}
+.Profile .About dt {
+  display: none;
+}
+.Profile .About dd {
+  font-size: 0.75rem;
+  color: #b3bec3;
+  font-family: "dattofont";
+  text-transform: uppercase;
+}
 
 /**
  * Responsive Styles

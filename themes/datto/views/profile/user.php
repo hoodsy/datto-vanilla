@@ -8,20 +8,26 @@ $Session = Gdn::session();
         echo $Photo;
     }
     ?>
-    <h1 class="H"><?php
+    <div class="profile-info">
+    <h4 class="H profile-username"><?php
 
         echo htmlspecialchars($this->User->Name);
 
-        echo '<span class="Gloss">';
-        Gdn_Theme::BulletRow();
-        if ($this->User->Title) {
-            echo Gdn_Theme::BulletItem('Title');
-            echo ' '.Bullet().' '.Wrap(htmlspecialchars($this->User->Title), 'span', array('class' => 'User-Title'));
-        }
+        // echo '<span class="Gloss">';
+        // Gdn_Theme::BulletRow();
+        // if ($this->User->Title) {
+        //     echo Gdn_Theme::BulletItem('Title');
+        //     echo ' '.Bullet().' '.Wrap(htmlspecialchars($this->User->Title), 'span', array('class' => 'User-Title'));
+        // }
 
-        $this->fireEvent('UsernameMeta');
-        echo '</span>';
-        ?></h1>
+        // $this->fireEvent('UsernameMeta');
+        // echo '</span>';
+        ?></h4>
+    <h4 class="profile-email"><?php
+      echo htmlspecialchars($this->User->Email);
+    ?></h4>
+    </div>
+
     <?php
     if ($this->User->Admin == 2) {
         echo '<div class="DismissMessage InfoMessage">', t('This is a system account and does not represent a real person.'), '</div>';
