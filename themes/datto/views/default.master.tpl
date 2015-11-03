@@ -96,7 +96,7 @@
       </div>
     {/if}
     <!-- Profile -->
-    {if $Profile}
+    {if $Profile || $Title == 'Inbox'}
       <div class="discussions-header">
         <div class="discussions-header-container">
           <div class="discussions-header-text">

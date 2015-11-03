@@ -1,6 +1,6 @@
 <?php if (!defined('APPLICATION')) exit(); ?>
+<h4 class="H discussions-label"><?php echo $this->data('Title'); ?></h4>
 <div class="FormTitleWrapper">
-    <h1 class="H"><?php echo $this->data('Title'); ?></h1>
     <?php
     echo $this->Form->open();
     echo $this->Form->errors();

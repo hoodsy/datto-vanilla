@@ -229,7 +229,8 @@ h1, h2, h3 {
   margin: 0;
 }
 
-.NavButton {
+
+.ProfileOptions .NavButton {
   border-radius: 0;
   text-shadow: none;
   box-shadow: none;
@@ -837,7 +838,8 @@ mark {
 .MessageList,
 .CommentFormWrap,
 .User,
-.Profile .FormWrapper {
+.Profile .FormWrapper,
+.site-content > .FormTitleWrapper {
   padding: 25px 50px;
   margin-bottom: 50px;
   background-color: #FFF;
@@ -968,9 +970,7 @@ a.Cancel {
  * Profile View
  * ============
 **/
-.site-content .Profile {
-  margin-top: -28px;
-}
+
 .Profile .About .Name,
 .Profile .About .Joined,
 .Profile .About .Visits,
@@ -986,10 +986,16 @@ a.Cancel {
 .MeBox {
   margin: 0;
 }
-.ProfileOptions {
+.ProfileOptions,
+.ProfileOptions:focus {
   position: relative;
   float: none;
   left: 91.75%;
+  width: 200px;
+  height: 0;
+}
+.ProfileOptions>a {
+  margin-left: -50px;
 }
 
 .site-content .BoxProfileFilter {
@@ -1090,6 +1096,10 @@ a.Cancel {
 }
 .Profile .Buttons {
   margin: 0;
+}
+
+.FormTitleWrapper {
+  margin-top: 7px;
 }
 
 /**
