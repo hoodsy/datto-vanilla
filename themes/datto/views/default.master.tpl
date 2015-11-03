@@ -10,12 +10,8 @@
 
   </head>
   <body id="{$BodyID}" class="{$BodyClass}">
-    <!--[if lt IE 8]>
-      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-    <![endif]-->
 
     {asset name="NewDiscussionButton"}
-
     <header class="navbar" role="banner">
       <nav class="navbar-nav lt-flex-center" role="navigation">
         <div class="navbar-brand">
@@ -26,8 +22,8 @@
           {module name="MeModule"}
         </div>
       </nav>
-
     </header>
+
     <!-- Headers -->
     <!-- CategoryList -->
     {if $Categories}
@@ -70,7 +66,22 @@
       </div>
     {/if}
     <!-- Discussion -->
-    {if $Discussion || ($Title == 'New Discussion')}
+    {if $Discussion}
+      <div class="discussions-header">
+        <div class="discussions-header-container">
+          <div class="discussions-header-text">
+            <h3>{$Category.Name}</h3>
+            {breadcrumbs}
+          </div>
+          <div class="discussions-search-container">
+            <i class="fontify-search-icon"></i>
+            {searchbox placeholder="Search the Community"}
+          </div>
+        </div>
+      </div>
+    {/if}
+    <!-- New Discussion -->
+    {if $Title == 'New Discussion'}
       <div class="discussions-header">
         <div class="discussions-header-container">
           <div class="discussions-header-text">
@@ -85,19 +96,16 @@
       </div>
     {/if}
 
+    <!-- Body -->
     <main class="container site-container" role="main">
-      <!-- Breadcrumbs -->
-      <!-- {if InSection("Discussion")}
-        <nav class="trail">
-          {breadcrumbs}
-        </nav>
-      {/if} -->
-
+    <!-- Content -->
       <div class="site-row">
         <section class="site-content">
           {asset name="Content"}
         </section>
 
+        <!-- Sidebar -->
+        {if !$Profile}
         <aside class="site-sidebar">
           {module name="NewDiscussionModule"}
           {module name="PromotedContentModule"
@@ -111,6 +119,13 @@
             Code of Conduct
           </a>
         </aside>
+        {/if}
+        {if $Profile}
+        <aside class="site-sidebar">
+          {module name="NewDiscussionModule"}
+          {module name="ProfileFilterModule"}
+        </aside>
+        {/if}
 
       </div>
 

@@ -66,8 +66,10 @@ input {
   padding: 10px !important;
 }
 textarea:focus,
+input.SmallInput:focus,
+input.InputBox:focus,
 .TextBoxWrapper input:focus {
-  background: #fbfbfb !important;
+  background: #fbfbfb;
 }
 
 select {
@@ -226,6 +228,16 @@ h1, h2, h3 {
   margin: 0;
 }
 
+.NavButton {
+  border-radius: 0;
+  text-shadow: none;
+  box-shadow: none;
+  background-image: none;
+  padding: 6px 15px 4px !important;
+  border: 1px solid #b3bec3;
+  background: #fff;
+}
+
 /**
  * Forms
  * =====
@@ -347,6 +359,7 @@ input:-ms-input-placeholder {
 }
 .navbar-meModule .Username {
   order: 5;
+  margin-left: 5px;
 }
 .navbar-meModule .MeMenu {
   margin-top: 10px;
@@ -896,6 +909,7 @@ mark {
 .FormWrapper .Buttons .PreviewButton,
 .FormWrapper .Buttons .WriteButton,
 .FormWrapper .Buttons .Cancel  {
+  margin: 0;
   color: #199ed9;
   border: 1px solid transparent;
   background-color: transparent;
@@ -906,6 +920,9 @@ mark {
   color: #002a3a;
   background-color: #e5e9eb !important;
   border: 1px solid #e5e9eb !important;
+}
+a.Cancel {
+  margin-left: 0 !important;
 }
 .Form-Header .Author .PhotoWrap {
   margin: 0;
@@ -931,6 +948,75 @@ mark {
 .DiscussionForm .PostOptions>li .List {
   margin: 2px 0 10px;
 }
+
+/**
+ * Profile View
+ * ============
+**/
+
+.Profile .About .Name,
+.Profile .About .Joined,
+.Profile .About .Visits,
+.Profile .About .LastActive,
+.Profile .About .IP {
+  display: none;
+}
+
+.Profile .MeBox {
+  display: block;
+}
+.UserBox,
+.MeBox {
+  margin: 0;
+}
+
+.site-content .BoxProfileFilter {
+  display: none;
+}
+/* Profile Sidebar */
+.BoxProfileFilter {
+  margin-top: 25px;
+  padding: 0 25px;
+  background-color: #FFF;
+  border: 1px solid #b3bec3;
+}
+.BoxProfileFilter li a {
+  font-size: 0.875rem !important;
+  font-weight: 600;
+  font-family: 'dattofont';
+  line-height: 1.42857143;
+  text-align: center;
+  text-transform: uppercase;
+  white-space: nowrap;
+  vertical-align: middle;
+
+}
+.BoxProfileFilter .Active a,
+.BoxProfileFilter li a:hover {
+  color: #199ed9;
+}
+.BoxProfileFilter li a {
+  color: #b3bec3;
+}
+.BoxProfileFilter li {
+  padding: 8px 0 5px;
+  border-bottom: 1px solid #b3bec3;
+}
+.BoxProfileFilter li:last-child {
+  border: none;
+}
+.Count {
+  float: right;
+  padding: 3px 4px 0;
+  font-size: 0.75rem;
+  font-weight: bold;
+  color: #fff;
+  background: #b3bec3;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+}
+
 
 /**
  * Responsive Styles
