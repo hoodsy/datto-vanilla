@@ -203,7 +203,8 @@ h1, h2, h3 {
   background-color: #FFF !important;
   background: #FFF !important;
 }
-.Handle {
+.Handle,
+.Handle:focus {
   padding: 5px 11px !important;
 }
 .MenuItems {
@@ -720,7 +721,8 @@ input:-ms-input-placeholder {
   text-transform: uppercase;
 }
 
-.Discussions>.Item {
+.Discussions>.Item,
+.Profile .Activities>.Item {
   padding: 15px;
   margin-bottom: -1px;
   background-color: #FFF;
@@ -834,7 +836,8 @@ mark {
 
 .MessageList,
 .CommentFormWrap,
-.User {
+.User,
+.Profile .FormWrapper {
   padding: 25px 50px;
   margin-bottom: 50px;
   background-color: #FFF;
@@ -1042,20 +1045,25 @@ a.Cancel {
   display: flex;
   align-items: center;
 }
+.User .ProfilePhoto {
+  height: 80px;
+  width: 80px;
+}
 .profile-info {
   margin: 0 15px;
+  align-self: flex-end;
 }
 .profile-info h4 {
   margin: 0;
 }
 .profile-email {
-  font-size: 0.875rem;
+  font-size: 1rem;
   color: #b3bec3;
   font-family: "dattofont";
   font-weight: 400;
 }
 .profile-username {
-  font-size: 1.125rem;
+  font-size: 1.25rem;
   font-family: "dattofont";
   font-weight: 400;
 }
@@ -1079,6 +1087,9 @@ a.Cancel {
   color: #b3bec3;
   font-family: "dattofont";
   text-transform: uppercase;
+}
+.Profile .Buttons {
+  margin: 0;
 }
 
 /**
