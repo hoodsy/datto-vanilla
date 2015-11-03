@@ -1,6 +1,7 @@
 <?php if (!defined('APPLICATION')) exit();
 $Session = Gdn::session();
 ?>
+<h4 class="H discussions-label">About</h4>
 <div class="User" itemscope itemtype="http://schema.org/Person">
     <?php
     $Photo = userPhoto($Row, array('LinkClass' => 'Img'));

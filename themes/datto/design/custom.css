@@ -990,12 +990,15 @@ a.Cancel {
 .ProfileOptions:focus {
   position: relative;
   float: none;
+  top: 37px;
   left: 91.75%;
   width: 200px;
   height: 0;
 }
 .ProfileOptions>a {
-  margin-left: -50px;
+  position: absolute;
+  margin-left: -105px;
+  margin-top: 30px;
 }
 
 .site-content .BoxProfileFilter {

@@ -135,7 +135,7 @@
         </aside>
         {/if}
         {if $Profile}
-        <aside class="profile-sidebar">
+        <aside class="site-sidebar">
           {module name="NewDiscussionModule"}
           {module name="ProfileFilterModule"}
         </aside>
