@@ -37,7 +37,7 @@
       </div>
     {/if}
     <!-- DiscussionsList -->
-    {if $Discussions}
+    {if $Discussions && !$Profile}
       <div class="discussions-header">
         <div class="discussions-header-container">
           <div class="discussions-header-text">
@@ -95,6 +95,20 @@
         </div>
       </div>
     {/if}
+    <!-- Profile -->
+    {if $Profile}
+      <div class="discussions-header">
+        <div class="discussions-header-container">
+          <div class="discussions-header-text">
+            <h3>Manage Profile</h3>
+          </div>
+          <div class="discussions-search-container">
+            <i class="fontify-search-icon"></i>
+            {searchbox placeholder="Search the Community"}
+          </div>
+        </div>
+      </div>
+    {/if}
 
     <!-- Body -->
     <main class="container site-container" role="main">
@@ -121,7 +135,7 @@
         </aside>
         {/if}
         {if $Profile}
-        <aside class="site-sidebar">
+        <aside class="profile-sidebar">
           {module name="NewDiscussionModule"}
           {module name="ProfileFilterModule"}
         </aside>

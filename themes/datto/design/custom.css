@@ -258,7 +258,7 @@ form {
   margin-top: 25px;
 }
 .discussions-search-container {
-  margin-top: -47px;
+  margin-top: -42px;
 }
 .search-container #Form_Search {
   width: 38.5rem;
@@ -430,6 +430,9 @@ input:-ms-input-placeholder {
 
 .site-sidebar {
   margin: 37px 0 0;
+}
+.profile-sidebar {
+
 }
 
 .BoxPromoted {
@@ -786,8 +789,9 @@ input:-ms-input-placeholder {
 
 mark {
   background: none;
-  color: #b0d156;
+  /*color: #b0d156;*/
   font-size: 1rem;
+  font-weight: 600;
 }
 
 .Discussion .Summary {
@@ -822,7 +826,8 @@ mark {
 **/
 
 .MessageList,
-.CommentFormWrap {
+.CommentFormWrap,
+.User {
   padding: 25px 50px;
   margin-bottom: 50px;
   background-color: #FFF;
@@ -961,7 +966,6 @@ a.Cancel {
 .Profile .About .IP {
   display: none;
 }
-
 .Profile .MeBox {
   display: block;
 }
@@ -977,6 +981,7 @@ a.Cancel {
 .BoxProfileFilter {
   margin-top: 25px;
   padding: 0 25px;
+  width: 126px;
   background-color: #FFF;
   border: 1px solid #b3bec3;
 }
@@ -1008,6 +1013,7 @@ a.Cancel {
 .Count {
   float: right;
   padding: 3px 4px 0;
+  margin-top: 1px;
   font-size: 0.75rem;
   font-weight: bold;
   color: #fff;
