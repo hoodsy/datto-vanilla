@@ -111,11 +111,26 @@
       </div>
     {/if}
     <!-- Profile -->
-    {if $Profile || $Title == 'Inbox'}
+    {if $Profile}
       <div class="discussions-header">
         <div class="discussions-header-container">
           <div class="discussions-header-text">
             <h3>Manage Profile</h3>
+          </div>
+          <div class="discussions-search-container">
+            <i class="fontify-search-icon"></i>
+            {searchbox placeholder="Search the Community"}
+          </div>
+        </div>
+      </div>
+    {/if}
+    <!-- Profile -->
+    {if $Conversation || $Conversations}
+      <div class="discussions-header">
+        <div class="discussions-header-container">
+          <div class="discussions-header-text">
+            <h3>Messages</h3>
+            {breadcrumbs}
           </div>
           <div class="discussions-search-container">
             <i class="fontify-search-icon"></i>

@@ -1,6 +1,6 @@
 <?php if (!defined('APPLICATION')) exit(); ?>
     <div class="DataListWrap">
-        <h1 class="H">
+        <h4 class="H discussions-label">
             <?php
             echo $this->Participants;
 
@@ -10,7 +10,7 @@
                     '<span class="Gloss">'.htmlspecialchars($this->data('Conversation.Subject')).'</span>';
             }
             ?>
-        </h1>
+        </h4>
         <?php
 
         if ($this->data('Conversation.Type')) {

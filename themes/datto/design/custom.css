@@ -77,6 +77,11 @@ select {
   font-family: "dattofont";
   font-size: 1.5rem;
 }
+#Form_CategoryID {
+  height: 25px;
+  font-size: 0.875rem;
+  border-radius: 0px !important;
+}
 
 .Meta,
 .MItem,
@@ -653,6 +658,9 @@ input:-ms-input-placeholder {
 .CategoryList .ItemContent .Options {
   display: none;
 }
+.Conversation .Item:last-child {
+  border-bottom: 0;
+}
 
 .CategoryDescription {
   padding-bottom: 25px;
@@ -855,7 +863,8 @@ mark {
 .MessageList,
 .CommentFormWrap,
 .User,
-.Profile .FormWrapper {
+.Profile .FormWrapper,
+#MessageForm .MessageFormWrap {
   padding: 25px 50px;
   margin-bottom: 50px;
   background-color: #FFF;
@@ -901,7 +910,8 @@ mark {
   margin: 15px 0;
 }
 
-.CommentsWrap .MessageList .Item {
+.CommentsWrap .MessageList .Item,
+.Conversation .Item {
   padding: 0;
   margin-bottom: 25px;
   border-bottom: 1px solid #b3bec3;
