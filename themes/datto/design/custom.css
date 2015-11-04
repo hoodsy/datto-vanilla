@@ -285,6 +285,9 @@ form {
   background-color: transparent;
   border: none;
   border-bottom: 3px solid #ffffff;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
 }
 #Form_Go {
   display: none;
@@ -339,9 +342,9 @@ input:-ms-input-placeholder {
 }
 .navbar-logo {
   display: block;
-  margin: -25px 0;
+  margin: -18px 0;
   width: 90px;
-  font-size: 90px;
+  font-size: 70px;
   color: #FFFFFF;
 }
 .navbar-logo:hover,
@@ -353,12 +356,13 @@ input:-ms-input-placeholder {
   display: none;
 }
 .navbar-product {
-  margin: 0 0 7px 15px;
-  padding: 1px 0 0 15px;
+  margin: 0 0 9px -10px;
+  padding: 5px 0 0px 11px;
   border-left: 1px solid #FFF;
-  font-size: 1rem;
+  font-size: 1.2rem;
   letter-spacing: 0.1em;
   color: #FFF;
+  line-height: 0.6;
   text-transform: uppercase;
 }
 
@@ -418,6 +422,11 @@ input:-ms-input-placeholder {
   margin-top: 15px;
 }
 .Popup li > label {
+  color: #81949b;
+  text-transform: uppercase;
+}
+.Popup .CheckBoxLabel {
+  font-size: 0.75rem;
   color: #81949b;
   text-transform: uppercase;
 }
