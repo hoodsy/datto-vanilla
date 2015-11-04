@@ -235,7 +235,7 @@ h1, h2, h3 {
   text-shadow: none;
   box-shadow: none;
   background-image: none;
-  padding: 6px 15px 4px !important;
+  padding: 8px 15px 6px !important;
   border: 1px solid #b3bec3;
   background: #fff;
 }
@@ -839,7 +839,8 @@ mark {
 .CommentFormWrap,
 .User,
 .Profile .FormWrapper,
-.site-content > .FormTitleWrapper {
+.site-content > .FormTitleWrapper,
+.Profile > .DataListWrap {
   padding: 25px 50px;
   margin-bottom: 50px;
   background-color: #FFF;
