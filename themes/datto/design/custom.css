@@ -219,6 +219,13 @@ h1, h2, h3 {
 .Handle:focus {
   padding: 5px 11px !important;
 }
+.NewDiscussion .Button.Handle .Sprite {
+  top: 3px !important;
+  border-color: #FFF transparent transparent transparent;
+}
+.ButtonGroup.Big .Button:hover .Sprite {
+  border-color: #199ed9 transparent transparent transparent;
+}
 .MenuItems {
   margin: 0;
   padding: 0;
