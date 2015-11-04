@@ -72,6 +72,12 @@ input.InputBox:focus,
 .TextBoxWrapper input:focus {
   background: #fbfbfb;
 }
+input[type=text] {
+  box-sizing: initial;
+}
+.TextBoxWrapper input:not([type=radio]):not([type=checkbox]) {
+  width: 96%;
+}
 
 select {
   font-family: "dattofont";
@@ -370,7 +376,7 @@ input:-ms-input-placeholder {
   margin-left: 5px;
 }
 .navbar-meModule .MeMenu {
-  margin-top: 10px;
+  margin-top: 6px;
 }
 .navbar-meModule .Username,
 .MeBox-SignIn .SignInLinks a {
@@ -404,6 +410,19 @@ input:-ms-input-placeholder {
 }
 .Popup .CreateAccount {
   margin-top: 5px;
+}
+.Popup .Buttons {
+  margin-top: 25px;
+}
+.Popup .Buttons .CreateAccount {
+  margin-top: 15px;
+}
+.Popup li > label {
+  color: #81949b;
+  text-transform: uppercase;
+}
+.Popup .Body {
+  border: 1px solid #b3bec3;
 }
 .Overlay {
   background-color: rgba(0,42,58,0.25);
@@ -444,6 +463,10 @@ input:-ms-input-placeholder {
 }
 .PopList a {
   color: #199ed9;
+}
+.Close span {
+  font-weight: 400;
+  color: #b3bec3;
 }
 
 /**
@@ -580,7 +603,7 @@ input:-ms-input-placeholder {
 .categories-header h1 {
   margin: 15px 0 20px 0;
   font-size: 3.5em;
-  text-transform: uppercase;
+  /*text-transform: uppercase;*/
 }
 
 .categories-header h3 {
@@ -726,6 +749,7 @@ input:-ms-input-placeholder {
 
 .discussions-header-text {
   margin-right: 50px;
+  margin-bottom: -15px;
 }
 
 .discussions-header h3 {
@@ -989,6 +1013,7 @@ a.Cancel {
 .PostOptions li>b {
   font-size: 0.875rem;
   color: #81949b;
+  text-transform: uppercase;
 }
 .FormWrapper div>label,
 .PostOptions li>b {
@@ -1148,7 +1173,7 @@ a.Cancel {
   margin-top: 7px;
 }*/
 #ConversationForm label {
-  color: #b3bec3;
+  color: #81949b;
 }
 ul.token-input-list {
   display: flex;

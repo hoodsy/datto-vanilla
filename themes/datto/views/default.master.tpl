@@ -57,6 +57,7 @@
         <div class="discussions-header-container">
           <div class="discussions-header-text">
             <h3>Search Results for &ldquo;{$SearchTerm}&rdquo;</h3>
+            {breadcrumbs}
           </div>
           <div class="discussions-search-container">
             <i class="fontify-search-icon"></i>
@@ -116,6 +117,7 @@
         <div class="discussions-header-container">
           <div class="discussions-header-text">
             <h3>Manage Profile</h3>
+            {breadcrumbs}
           </div>
           <div class="discussions-search-container">
             <i class="fontify-search-icon"></i>
