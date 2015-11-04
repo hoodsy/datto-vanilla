@@ -411,6 +411,8 @@ input:-ms-input-placeholder {
   right: -112px;
   white-space: nowrap;
   font-size: 0.875rem;
+  border: none;
+  border-radius: 0;
 }
 .Flyout .Item {
   margin: 0;
@@ -424,6 +426,9 @@ input:-ms-input-placeholder {
 }
 .PopList .Item.Title {
   padding: 5px 14px 2px;
+  text-transform: uppercase;
+  color: #B3BEC3;
+  font-weight: 400;
 }
 .PopList .ItemContent {
   margin: 0;
@@ -734,6 +739,13 @@ input:-ms-input-placeholder {
 #search-results>.Item {
   padding: 9px 15px;
 }
+.Read .Title a {
+  color: #002a3a !important;
+  opacity: 0.6 !important;
+}
+.Read .Title a:hover {
+  opacity: 1 !important;
+}
 .Discussions .Discussion {
   display: flex;
   align-items: center;
@@ -899,7 +911,7 @@ mark {
   margin-bottom: 0;
   border-bottom: none;
 }
-.CommentsWrap .MessageList .Item .Reactions {
+.CommentsWrap .MessageList .>ctions {
   display: none;
 }
 .CommentsWrap .MessageList .Item .Meta a {

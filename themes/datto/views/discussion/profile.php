@@ -1,8 +1,8 @@
 <?php if (!defined('APPLICATION')) exit();
 
 echo '<div class="DataListWrap">';
-echo '<h2 class="H">'.t('Comments').'</h2>';
-echo '<ul class="DataList SearchResults">';
+echo '<h4 class="H discussions-label">'.t('Comments').'</h4>';
+echo '<ul class="DataList SearchResults Discussions">';
 
 if (sizeof($this->data('Comments'))) {
     echo $this->fetchView('profilecomments', 'Discussion', 'Vanilla');
