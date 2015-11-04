@@ -873,7 +873,8 @@ mark {
 .CommentFormWrap,
 .User,
 .Profile .FormWrapper,
-#MessageForm .MessageFormWrap {
+#MessageForm .MessageFormWrap,
+.FormTitleWrapper {
   padding: 25px 50px;
   margin-bottom: 50px;
   background-color: #FFF;
@@ -1039,6 +1040,9 @@ a.Cancel {
   font-size: 0.75rem;
   padding: 2px 2px 0;
 }
+.MeButton:hover {
+  background: rgba(228, 233, 235, 1);
+}
 
 .site-content .BoxProfileFilter {
   display: none;
@@ -1140,9 +1144,9 @@ a.Cancel {
   margin: 0;
 }
 
-.FormTitleWrapper {
+/*.FormTitleWrapper {
   margin-top: 7px;
-}
+}*/
 #ConversationForm label {
   color: #b3bec3;
 }
