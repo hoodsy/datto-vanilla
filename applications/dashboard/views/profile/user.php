@@ -2,14 +2,7 @@
 $Session = Gdn::session();
 ?>
 <div class="User" itemscope itemtype="http://schema.org/Person">
-    <?php
-    $Photo = userPhoto($Row, array('LinkClass' => 'Img'));
-    if ($Photo) {
-        echo $Photo;
-    }
-    ?>
     <h1 class="H"><?php
-
         echo htmlspecialchars($this->User->Name);
 
         echo '<span class="Gloss">';

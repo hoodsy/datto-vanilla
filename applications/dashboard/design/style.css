@@ -577,7 +577,7 @@ div.FileUpload .CurrentImage {
     border-radius: 0 2px 2px 0;
     border-right-width: 1px;
 }
-/*
+
 .Button.Active,
 .ButtonGroup.Open .Button.Handle,
 .Button:focus,
@@ -587,7 +587,7 @@ div.FileUpload .CurrentImage {
     box-shadow: none;
     -moz-box-shadow: none;
     -webkit-box-shadow: none;
-}*/
+}
 
 .Button.FileInput > input {
     position: absolute;
@@ -660,9 +660,9 @@ div.FileUpload .CurrentImage {
     box-shadow: 0 1px 1px #ddd;
 }
 
-/*.ButtonGroup.Open .NavButton.Handle {
+.ButtonGroup.Open .NavButton.Handle {
     background: #eee;
-}*/
+}
 
 /* Split Button Dropdown */
 .ButtonGroup.Multi > .NavButton:first-child,
@@ -670,13 +670,13 @@ div.FileUpload .CurrentImage {
     border-top-right-radius: 0;
     border-bottom-right-radius: 0;
 }
-/*
+
 .ButtonGroup.Multi > .NavButton.Handle,
 .ButtonGroup.Multi > .Button.Handle {
     border-top-left-radius: 0;
     border-bottom-left-radius: 0;
     border-left: 0;
-}*/
+}
 
 /*.Multi .Button:last {
    border-top-left-radius: 0;
@@ -1212,7 +1212,7 @@ div.Discussion:hover .OptionsTitle:hover,
     line-height: 18px;
 }
 
-/*.MenuItems a:hover {
+.MenuItems a:hover {
     color: #ffffff !Important;
     text-decoration: none;
     background-color: #004D9F !Important;
@@ -1220,7 +1220,7 @@ div.Discussion:hover .OptionsTitle:hover,
 
 .MenuItems a:hover .Gloss {
     color: #ffffff !important;
-}*/
+}
 
 .MenuItems li > strong {
     font-size: 12px;
