@@ -855,8 +855,7 @@ mark {
 .MessageList,
 .CommentFormWrap,
 .User,
-.Profile .FormWrapper,
-.site-content > .FormTitleWrapper {
+.Profile .FormWrapper {
   padding: 25px 50px;
   margin-bottom: 50px;
   background-color: #FFF;
