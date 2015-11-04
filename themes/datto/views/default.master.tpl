@@ -119,7 +119,7 @@
         </section>
 
         <!-- Sidebar -->
-        {if !$Profile}
+        {if !$Profile && !$Conversations}
         <aside class="site-sidebar">
           {module name="NewDiscussionModule"}
           {module name="PromotedContentModule"
@@ -138,6 +138,21 @@
         <aside class="site-sidebar">
           {module name="NewDiscussionModule"}
           {module name="ProfileFilterModule"}
+        </aside>
+        {/if}
+        {if $Conversations}
+        <aside class="site-sidebar">
+          {module name="NewConversationModule"}
+          {module name="PromotedContentModule"
+            Selector="Category"
+            ContentType="discussions"
+            Selection="Announcements"
+            Limit="5"
+          }
+          <a class="Button sidebar-coc"
+            href="">
+            Code of Conduct
+          </a>
         </aside>
         {/if}
 

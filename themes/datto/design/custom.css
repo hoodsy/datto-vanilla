@@ -722,8 +722,9 @@ input:-ms-input-placeholder {
   text-transform: uppercase;
 }
 
-.Discussions>.Item,
-.Profile .Activities>.Item {
+.Discussions > .Item,
+.Conversations > .Item,
+.Profile .Activities > .Item {
   padding: 15px;
   margin-bottom: -1px;
   background-color: #FFF;
@@ -839,8 +840,7 @@ mark {
 .CommentFormWrap,
 .User,
 .Profile .FormWrapper,
-.site-content > .FormTitleWrapper,
-.Profile > .DataListWrap {
+.site-content > .FormTitleWrapper {
   padding: 25px 50px;
   margin-bottom: 50px;
   background-color: #FFF;
