@@ -151,7 +151,7 @@
         </section>
 
         <!-- Sidebar -->
-        {if !$Profile && !$Conversations}
+        {if !$Profile && !$Conversations && !$Conversation}
         <aside class="site-sidebar">
           {module name="NewDiscussionModule"}
           {module name="PromotedContentModule"
@@ -172,7 +172,7 @@
           {module name="ProfileFilterModule"}
         </aside>
         {/if}
-        {if $Conversations}
+        {if $Conversations || $Conversation}
         <aside class="site-sidebar">
           {module name="NewConversationModule"}
         </aside>

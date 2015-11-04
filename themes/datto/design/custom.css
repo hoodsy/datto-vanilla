@@ -997,6 +997,9 @@ mark {
   position: relative;
   top: -5px;
 }
+.User #Status {
+  display: none;
+}
 
 .FormWrapper {
   background: #FFF;
