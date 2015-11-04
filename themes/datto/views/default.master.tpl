@@ -95,6 +95,21 @@
         </div>
       </div>
     {/if}
+    <!-- New Conversation -->
+    {if $Title == 'New Message'}
+      <div class="discussions-header">
+        <div class="discussions-header-container">
+          <div class="discussions-header-text">
+            <h3>What's on your mind?</h3>
+            {breadcrumbs}
+          </div>
+          <div class="discussions-search-container">
+            <i class="fontify-search-icon"></i>
+            {searchbox placeholder="Search the Community"}
+          </div>
+        </div>
+      </div>
+    {/if}
     <!-- Profile -->
     {if $Profile || $Title == 'Inbox'}
       <div class="discussions-header">
@@ -143,16 +158,6 @@
         {if $Conversations}
         <aside class="site-sidebar">
           {module name="NewConversationModule"}
-          {module name="PromotedContentModule"
-            Selector="Category"
-            ContentType="discussions"
-            Selection="Announcements"
-            Limit="5"
-          }
-          <a class="Button sidebar-coc"
-            href="">
-            Code of Conduct
-          </a>
         </aside>
         {/if}
 

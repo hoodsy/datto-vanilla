@@ -1,7 +1,8 @@
 <?php if (!defined('APPLICATION')) exit(); ?>
+<h4 class="discussions-label">New Message</h4>
 <div id="ConversationForm" class="FormTitleWrapper ConversationForm">
     <?php
-    echo wrap($this->data('Title'), 'h1', array('class' => 'H'));
+    // echo wrap($this->data('Title'), 'h1', array('class' => 'H'));
     $this->fireEvent('BeforeMessageAdd');
 
     echo '<div class="FormWrapper">';

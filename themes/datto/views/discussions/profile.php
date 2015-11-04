@@ -1,7 +1,7 @@
 <?php if (!defined('APPLICATION')) exit();
 
 echo '<div class="DataListWrap">';
-echo '<h2 class="H">'.t('Discussions').'</h2>';
+echo '<h4 class="H discussions-label">'.t('Discussions').'</h4>';
 echo '<ul class="DataList Discussions">';
 
 // Create some variables so that they aren't defined in every loop.

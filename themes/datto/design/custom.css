@@ -62,8 +62,9 @@ a:hover {
 
 textarea,
 input {
-  color: #002a3a;
   padding: 10px !important;
+  font-size: 1rem;
+  color: #002a3a;
 }
 textarea:focus,
 input.SmallInput:focus,
@@ -760,6 +761,9 @@ input:-ms-input-placeholder {
   margin: 0;
   color: #b3bec3;
 }
+.Discussions .Discussion .MItem:last-child {
+  margin-left: 5px;
+}
 .Discussions .Discussion .CommentCount {
   position: absolute;
   right: 25px;
@@ -1104,6 +1108,23 @@ a.Cancel {
 
 .FormTitleWrapper {
   margin-top: 7px;
+}
+#ConversationForm label {
+  color: #b3bec3;
+}
+ul.token-input-list {
+  display: flex;
+  align-items: center;
+  color: #002a3a;
+  border-color: 1px solid #b3bec3;
+}
+li.token-input-token {
+  padding: 6px 10px 4px;
+  margin: 0 5px;
+  font-size: 0.875rem;
+  border: 1px solid #b3bec3;
+  border-radius: 0;
+  background-color: #f5f6f7;
 }
 
 /**
