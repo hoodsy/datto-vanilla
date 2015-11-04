@@ -9,7 +9,7 @@ if (!$CancelUrl) {
 }
 
 ?>
-<div id="DiscussionForm" class="FormTitleWrapper DiscussionForm">
+<div id="DiscussionForm" class="DiscussionForm">
     <?php
     if ($this->deliveryType() == DELIVERY_TYPE_ALL)
         echo wrap($this->data('Title'), 'h4', array('class' => 'H discussions-label'));

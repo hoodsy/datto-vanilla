@@ -920,7 +920,8 @@ mark {
 .User,
 .Profile .FormWrapper,
 #MessageForm .MessageFormWrap,
-.FormTitleWrapper {
+.FormTitleWrapper,
+#DiscussionForm .FormWrapper {
   padding: 25px 50px;
   margin-bottom: 50px;
   background-color: #FFF;
@@ -1035,8 +1036,9 @@ a.Cancel {
 .PostOptions li>b {
   font-size: 0.875rem;
   color: #81949b;
-  text-transform: uppercase;
+  /*text-transform: uppercase;*/
 }
+.Popup .FormWrapper label,
 .FormWrapper div>label,
 .PostOptions li>b {
   text-transform: uppercase;
