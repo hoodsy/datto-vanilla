@@ -20,6 +20,20 @@ Here are some things you should know before you begin:
 */
 
 /**
+ * Colors
+ * =====
+ *
+ * blue: #199ed9;
+ * teal: #54c0c0;
+ * citrus: #b0d156;
+ * midnight: #002a3a;
+ * gray-light: #f5f6f7;
+ * gray: #b3bec3;
+ * gray-dark: #81949b;
+ *
+**/
+
+/**
  * Top Level
  * =========
 **/
@@ -109,20 +123,6 @@ select {
   display: flex;
   align-items: center;
 }
-
-/**
- * Colors
- * =====
- *
- * blue: #199ed9;
- * teal: #54c0c0;
- * citrus: #b0d156;
- * midnight: #002a3a;
- * gray-light: #f5f6f7;
- * gray: #b3bec3;
- * gray-dark: #81949b;
- *
-**/
 
 /**
  * Fonts
@@ -385,7 +385,8 @@ input:-ms-input-placeholder {
 .navbar-meModule .Username,
 .MeBox-SignIn .SignInLinks a {
   margin-bottom: -6px;
-  padding: 10px 25px 7px;
+  padding: 6px 15px 4px;
+  font-size: 0.875rem;
   font-family: "dattofont";
   text-transform: uppercase;
   color: #FFF;
@@ -400,6 +401,18 @@ input:-ms-input-placeholder {
 }
 .MeBox-SignIn .Bullet {
   display: none;
+}
+.SpOptions {
+  background-position: 0 -211px;
+}
+.SpBookmarks {
+  background-position: -80px -245px;
+}
+.SpInbox {
+  background-position: 0 -228px;
+}
+.SpNotifications {
+  background-position: -32px -212px;
 }
 
 .Popup .Border {
@@ -1071,11 +1084,10 @@ a.Cancel {
   margin-top: 30px;
 }
 .MeButton .Alert {
-  font-size: 0.75rem;
   padding: 2px 2px 0;
-}
-.MeButton:hover {
-  background: rgba(228, 233, 235, 1);
+  font-size: 0.75rem;
+  font-weight: 600;
+  background-color: #54c0c0;
 }
 
 .site-content .BoxProfileFilter {
