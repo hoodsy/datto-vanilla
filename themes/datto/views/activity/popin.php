@@ -4,7 +4,7 @@
     if (count($this->data('Activities'))):
         ?>
         <li class="Item Title"><?php
-            echo anchor(t('Notification Preferences'), 'profile/preferences');
+            echo anchor(t('Settings'), 'profile/preferences');
             echo wrap(t('Notifications'), 'strong');
             ?></li>
         <?php foreach ($this->data('Activities') as $Activity): ?>

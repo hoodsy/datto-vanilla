@@ -435,6 +435,9 @@ input:-ms-input-placeholder {
   color: #B3BEC3;
   font-weight: 400;
 }
+.PopList .Item.Title a {
+  font-size: 0.75rem;
+}
 .PopList .ItemContent {
   margin: 0;
   line-height: inherit;
@@ -828,6 +831,12 @@ mark {
   font-size: 1rem;
   font-weight: 600;
 }
+.HasNew {
+  background-color: #54c0c0;
+  font-size: 0.75rem;
+  color: white;
+  border-radius: 0;
+}
 
 .Discussion .Summary {
   align-self: flex-end;
@@ -1025,6 +1034,10 @@ a.Cancel {
   position: absolute;
   margin-left: -105px;
   margin-top: 30px;
+}
+.MeButton .Alert {
+  font-size: 0.75rem;
+  padding: 2px 2px 0;
 }
 
 .site-content .BoxProfileFilter {
