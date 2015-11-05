@@ -258,6 +258,10 @@ h1, h2, h3 {
   border: 1px solid #b3bec3;
   background: #fff;
 }
+.NavButton > .SpEditProfile {
+  position: relative;
+  top: -2px;
+}
 
 /**
  * Forms
@@ -999,6 +1003,11 @@ mark {
 }
 .User #Status {
   display: none;
+}
+.FormTitleWrapper .User-Name label,
+.FormTitleWrapper .User-Email label {
+  color: #81949b;
+  text-transform: uppercase;
 }
 
 .FormWrapper {

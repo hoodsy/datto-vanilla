@@ -144,6 +144,7 @@
 
     <!-- Body -->
     <main class="container site-container" role="main">
+    {module name="SideMenuModule"}
     <!-- Content -->
       <div class="site-row">
         <section class="site-content">
