@@ -37,6 +37,7 @@ if ($this->data('Page') == 1) {
     echo '</div>'; // close discussion wrap
 }
 
+echo '<a href="#Form_Comment" class="Button discussions-new-comment">New Comment</a>';
 echo '<h4 class="discussions-label">Comments</h4>';
 echo '<div class="CommentsWrap">';
 

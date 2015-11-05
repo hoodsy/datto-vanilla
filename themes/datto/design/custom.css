@@ -274,6 +274,13 @@ form {
   line-height: 1.5rem !important;
   color: #002a3a !important;
 }
+
+.discussions-new-comment {
+  position: relative;
+  top: -8px;
+  float: right;
+}
+
 /**
  * Search Bar
  * ==========
@@ -631,6 +638,9 @@ input:-ms-input-placeholder {
   color: white;
   text-align: center;
   background-color: #199ed9;
+  background-image: url('Forum_home_full.png');
+  background-size: 100% 200%;
+  background-position: 0px 50%;
 }
 
 .categories-header h1 {
