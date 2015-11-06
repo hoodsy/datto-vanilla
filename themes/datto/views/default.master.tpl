@@ -224,7 +224,6 @@
               <li><a href="/profile/password">Change Password</a></li>
               <li class="Active"><a href="/profile/picture">Change Picture</a></li>
             {/if}
-
           </ul>
         </aside>
         {/if}

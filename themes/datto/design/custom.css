@@ -629,15 +629,20 @@ input:-ms-input-placeholder {
   background-size: cover;
   background-position: 0px 50%;
 }
-
 .categories-header h1 {
   margin: 15px 0 20px 0;
   font-size: 3.5em;
   /*text-transform: uppercase;*/
 }
-
 .categories-header h3 {
   font-size: 2.25em;
+}
+
+.Category-advisory-board::before {
+  position: absolute;
+  top: 25px;
+  left: 150px;
+  font-size: 1.25rem;
 }
 
 .HomepageTitle {

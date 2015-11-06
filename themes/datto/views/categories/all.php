@@ -1,6 +1,7 @@
 <?php if (!defined('APPLICATION')) exit();
 
-define('BASE_URL', 'http://localhost:8888/vanilla/');
+// Potentially need to use https for production?
+define('BASE_URL', "http://{$_SERVER['HTTP_HOST']}{$_SERVER['REQUEST_URI']}");
 
 // RSS Data Formatter
 function formatRssData ($data)
