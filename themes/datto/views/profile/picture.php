@@ -26,8 +26,8 @@ if ($Thumbnail && !isUrl($Thumbnail)) {
 
 $Thumbnail = img($Thumbnail, array('alt' => t('Thumbnail')));
 ?>
+<h4 class="H discussions-label"><?php echo $this->data('Title'); ?></h4>
 <div class="SmallPopup FormTitleWrapper">
-    <h1 class="H"><?php echo $this->data('Title'); ?></h1>
     <?php
     echo $this->Form->open(array('enctype' => 'multipart/form-data'));
     echo $this->Form->errors();

@@ -276,9 +276,7 @@ form {
 }
 
 .discussions-new-comment {
-  position: relative;
-  top: -8px;
-  float: right;
+  margin-bottom: 15px;
 }
 
 /**
@@ -323,19 +321,23 @@ form {
 }
 input::-webkit-input-placeholder {
   color: white;
-  opacity: 0.5;
+  font-weight: 600;
+  opacity: 0.65;
 }
 input::-moz-placeholder {
   color: white;
-  opacity: 0.5;
+  font-weight: 600;
+  opacity: 0.65;
 }
 input:-moz-placeholder {   /* Older versions of Firefox */
   color: white;
-  opacity: 0.5;
+  font-weight: 600;
+  opacity: 0.65;
 }
 input:-ms-input-placeholder {
   color: white;
-  opacity: 0.5;
+  font-weight: 600;
+  opacity: 0.65;
 }
 
 /**
@@ -639,7 +641,7 @@ input:-ms-input-placeholder {
   text-align: center;
   background-color: #199ed9;
   background-image: url('Forum_home_full.png');
-  background-size: 100% 200%;
+  background-size: cover;
   background-position: 0px 50%;
 }
 
@@ -700,6 +702,13 @@ input:-ms-input-placeholder {
 }
 .CategoryList .Meta .MItem {
   display: none;
+}
+.RoleTitle {
+  text-transform: uppercase;
+}
+.DataBox-Comments .RoleTitle {
+  position: relative;
+  top: -5px;
 }
 
 .CategoryList .Meta .DiscussionCount {
@@ -1148,7 +1157,7 @@ a.Cancel {
   color: #199ed9;
 }
 .BoxProfileFilter li a {
-  color: #b3bec3;
+  color: #81949b;
 }
 .BoxProfileFilter li {
   padding: 8px 0 5px;
@@ -1219,6 +1228,9 @@ a.Cancel {
 }
 .Profile .Buttons {
   margin: 0;
+}
+.profile-password .Buttons {
+  margin-top: 15px;
 }
 
 /*.FormTitleWrapper {

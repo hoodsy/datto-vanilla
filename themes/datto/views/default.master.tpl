@@ -27,7 +27,7 @@
     <!-- Headers -->
     <!-- CategoryList -->
     {if $Categories}
-      <div class="categories-header">
+      <div class="categories-header ">
         <h1>Welcome to the Partner Community</h1>
         <h3>What's on your mind?</h3>
         <div class="search-container">
@@ -144,15 +144,18 @@
 
     <!-- Body -->
     <main class="container site-container" role="main">
-    {module name="SideMenuModule"}
     <!-- Content -->
       <div class="site-row">
         <section class="site-content">
           {asset name="Content"}
         </section>
 
-        <!-- Sidebar -->
-        {if !$Profile && !$Conversations && !$Conversation}
+        <!-- Default Sidebar -->
+        {if !$Profile
+         && !$Conversations
+         && !$Conversation
+         && !$Discussion
+        }
         <aside class="site-sidebar">
           {module name="NewDiscussionModule"}
           {module name="PromotedContentModule"
@@ -167,13 +170,67 @@
           </a>
         </aside>
         {/if}
-        {if $Profile}
+        <!-- Discussion Sidebar -->
+        {if $Discussion}
+        <aside class="site-sidebar">
+          <a class="Button discussions-new-comment"
+            href="#Form_Comment">
+            New Comment
+          </a>
+          {module name="NewDiscussionModule"}
+          {module name="PromotedContentModule"
+            Selector="Category"
+            ContentType="discussions"
+            Selection="Announcements"
+            Limit="5"
+          }
+          <a class="Button sidebar-coc"
+            href="">
+            Code of Conduct
+          </a>
+        </aside>
+        {/if}
+        <!-- Profile Sidebar -->
+        {if $Profile
+         && $Title != 'Edit Profile'
+         && $Title != 'Change My Password'
+         && $Title != 'Change Picture'
+        }
         <aside class="site-sidebar">
           {module name="NewDiscussionModule"}
           {module name="ProfileFilterModule"}
         </aside>
         {/if}
-        {if $Conversations || $Conversation}
+        <!-- Edit Profile Sidebar -->
+        {if $Title == 'Edit Profile'
+         || $Title == 'Change My Password'
+         || $Title == 'Change Picture'
+        }
+        <aside class="site-sidebar">
+          {module name="NewDiscussionModule"}
+          <ul class="BoxProfileFilter">
+            {if $Title == 'Edit Profile'}
+              <li class="Active"><a href="/profile/edit">Edit Profile</a></li>
+              <li><a href="/profile/password">Change Password</a></li>
+              <li><a href="/profile/picture">Change Picture</a></li>
+            {/if}
+            {if $Title == 'Change My Password'}
+              <li><a href="/profile/edit">Edit Profile</a></li>
+              <li class="Active"><a href="/profile/password">Change Password</a></li>
+              <li><a href="/profile/picture">Change Picture</a></li>
+            {/if}
+            {if $Title == 'Change Picture'}
+              <li><a href="/profile/edit">Edit Profile</a></li>
+              <li><a href="/profile/password">Change Password</a></li>
+              <li class="Active"><a href="/profile/picture">Change Picture</a></li>
+            {/if}
+
+          </ul>
+        </aside>
+        {/if}
+        <!-- Messages Sidebar -->
+        {if $Conversation
+         || $Conversations}
         <aside class="site-sidebar">
           {module name="NewConversationModule"}
         </aside>

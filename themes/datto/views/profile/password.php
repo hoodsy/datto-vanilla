@@ -1,6 +1,6 @@
 <?php if (!defined('APPLICATION')) exit(); ?>
-<div class="FormTitleWrapper">
-    <h1 class="H"><?php echo t('Change My Password'); ?></h1>
+<h4 class="H discussions-label"><?php echo t('Change My Password'); ?></h4>
+<div class="FormTitleWrapper profile-password">
     <?php
     echo $this->Form->open();
     echo $this->Form->errors();
