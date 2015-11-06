@@ -640,7 +640,7 @@ input:-ms-input-placeholder {
 
 .Category-advisory-board::before {
   position: absolute;
-  top: 25px;
+  top: 24px;
   left: 150px;
   font-size: 1.25rem;
 }
