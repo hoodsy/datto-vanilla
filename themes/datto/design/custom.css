@@ -248,21 +248,6 @@ h1, h2, h3 {
   margin: 0;
 }
 
-
-.ProfileOptions .NavButton {
-  border-radius: 0;
-  text-shadow: none;
-  box-shadow: none;
-  background-image: none;
-  padding: 8px 15px 6px !important;
-  border: 1px solid #b3bec3;
-  background: #fff;
-}
-.NavButton > .SpEditProfile {
-  position: relative;
-  top: -2px;
-}
-
 /**
  * Forms
  * =====
@@ -1118,11 +1103,38 @@ a.Cancel {
   width: 200px;
   height: 0;
 }
-.ProfileOptions>a {
+.ProfileOptions > a {
   position: absolute;
-  margin-left: -105px;
+  /*margin-left: -105px;*/
+  margin-left: -80px;
   margin-top: 30px;
+  font-size: 0.875rem;
+  color: #199ed9;
 }
+.ProfileOptions > a:hover {
+  color: #002a3a;
+}
+.ProfileOptions .NavButton {
+  border-radius: 0;
+  text-shadow: none;
+  box-shadow: none;
+  background-image: none;
+  padding: 8px 15px 6px !important;
+  /*border: 1px solid #b3bec3;*/
+  border: none;
+  background: #fff;
+}
+.ProfileOptions .ButtonGroup {
+  margin-top: 25px;
+  margin-left: -38px;
+  border: 1px solid #b3bec3;
+}
+.NavButton > .SpEditProfile {
+  display: none;
+  /*position: relative;
+  top: -2px;*/
+}
+
 .MeButton .Alert {
   padding: 2px 2px 0;
   font-size: 0.75rem;
