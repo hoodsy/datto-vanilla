@@ -2,11 +2,11 @@
 /**
  * @copyright 2009-2015 Vanilla Forums Inc.
  * @license http://www.opensource.org/licenses/gpl-2.0.php GNU GPL v2
- * @package BitterSweet Theme
+ * @package Datto Theme
  * @since 2.1
  */
 
-$ThemeInfo['bittersweet'] = array(
+$ThemeInfo['datto'] = array(
     'Name' => 'Datto',
     'Description' => "Datto Community custom forum theme",
     'Version' => '0.1',
