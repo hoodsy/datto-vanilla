@@ -155,6 +155,7 @@
          && !$Conversations
          && !$Conversation
          && !$Discussion
+         && !$Category
         }
         <aside class="site-sidebar">
           {module name="NewDiscussionModule"}
@@ -171,23 +172,15 @@
         </aside>
         {/if}
         <!-- Discussion Sidebar -->
-        {if $Discussion}
+        {if $Discussion
+         || $Category}
         <aside class="site-sidebar">
           <a class="Button discussions-new-comment"
             href="#Form_Comment">
             New Comment
           </a>
           {module name="NewDiscussionModule"}
-          {module name="PromotedContentModule"
-            Selector="Category"
-            ContentType="discussions"
-            Selection="Announcements"
-            Limit="5"
-          }
-          <a class="Button sidebar-coc"
-            href="">
-            Code of Conduct
-          </a>
+          {module name="CategoriesModule"}
         </aside>
         {/if}
         <!-- Profile Sidebar -->

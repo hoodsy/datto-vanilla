@@ -260,7 +260,8 @@ form {
   color: #002a3a !important;
 }
 
-.discussions-new-comment {
+.discussions-new-comment,
+.discussions-new-comment:focus {
   margin-bottom: 15px;
 }
 
@@ -457,6 +458,7 @@ input:-ms-input-placeholder {
 
 .MeBox .Flyout {
   width: initial;
+  max-width: 300px;
   min-width: 100px;
   left: initial;
   right: -112px;
@@ -464,6 +466,10 @@ input:-ms-input-placeholder {
   font-size: 0.875rem;
   border: none;
   border-radius: 0;
+}
+.MeBox .Flyout .Excerpt {
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 .Flyout .Item {
   margin: 0;
@@ -501,6 +507,11 @@ input:-ms-input-placeholder {
  * =======
 **/
 
+.site-sidebar,
+.discussions-search-container,
+.navbar-meModule {
+  width: 25%;
+}
 .site-sidebar {
   margin: 37px 0 0;
 }
@@ -509,10 +520,10 @@ input:-ms-input-placeholder {
 }
 
 .BoxPromoted {
-  margin: 35px 0;
+  margin: 25px 0;
 }
 .BoxPromoted h4 {
-  margin-bottom: 10px;
+  margin-bottom: 5px;
   color: #b3bec3;
   font-family: 'dattofont-condensed-bold';
   font-size: 1.5rem;
@@ -627,7 +638,7 @@ input:-ms-input-placeholder {
   background-color: #199ed9;
   background-image: url('Forum_home_full.png');
   background-size: cover;
-  background-position: 0px 50%;
+  background-position: 0px 55%;
 }
 .categories-header h1 {
   margin: 15px 0 20px 0;
@@ -668,14 +679,25 @@ input:-ms-input-placeholder {
   text-transform: uppercase;
 }
 
-.CategoryList .Depth2 {
-  padding: 25px 25px 0!important;
+.CategoryList .Depth2,
+.Categories .CategoryBox {
+  padding: 25px 25px 48px !important;
   margin: 12.5px 0 25px !important;
   border: 1px solid #B3BEC3 !important;
   background-color: white !important;
 }
 
-.CategoryList .TitleWrap a {
+.CategoryBox .MorePager a {
+  float: right;
+  margin-top: 10px !important;
+  padding: 3px 7px 1px;
+  font-size: 0.75rem;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.CategoryList .TitleWrap a,
+.Categories .TitleWrap a {
   font-size: 1.75rem;
   font-family: "dattofont-condensed-bold";
 }
@@ -763,12 +785,14 @@ input:-ms-input-placeholder {
   font-size: 1rem;
   color: #199ed9;
   font-weight: 600;
+  text-transform: capitalize;
 }
 
 .discussion-meta-created {
   padding-right: 5px;
 }
-.CategoryList .Category-announcements {
+.Categories .Category-announcements,
+.Categories .Category-datto-announcements {
   display: none;
 }
 
@@ -813,6 +837,54 @@ input:-ms-input-placeholder {
   background-color: #FFF;
   border: 1px solid #b3bec3;
 }
+.CategoryBox .Discussions > .Item {
+  margin-bottom: 0;
+  padding: 15px 0;
+  border: none;
+  border-bottom: 1px solid #b3bec3;
+}
+.CategoryBox .Discussions > .Item .Title a {
+  width: 100%;
+  font-size: 1rem;
+  color: #199ed9;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+.CategoryBox .Discussions > .Item .Meta {
+  font-size: 0.75rem;
+  color: #b3bec3;
+}
+.CategoryBox .Discussions > .Item .Meta .Category {
+  display: none;
+}
+.CategoryBox .Discussions > .Item .CommentCount {
+  right: 10px;
+  top: 25px;
+  font-size: 1.75rem;
+}
+.CategoryBox .Discussions > .Item .CommentCount span {
+  position: absolute;
+  top: 0px;
+  left: -1px;
+  width: 30px;
+  font-size: 0.75rem;
+  font-weight: bold;
+  text-align: center;
+  cursor: default;
+}
+.Categories .Discussions .Discussion .Tag- {
+  font-size: 1rem;
+}
+.Tag,
+.HasNew {
+  background-color: #54c0c0;
+  font-size: 0.75rem;
+  font-weight: bold;
+  color: white;
+  padding: 4px 5px 2px;
+  border-radius: 0;
+}
+
 #search-results>.Item {
   padding: 9px 15px;
 }
@@ -829,6 +901,7 @@ input:-ms-input-placeholder {
   flex-wrap: wrap;
 }
 
+.Categories .Options,
 .Discussions .Item .Options,
 .Discussions .Discussion .ViewCount {
   display: none;
@@ -897,12 +970,12 @@ mark {
   font-size: 1rem;
   font-weight: 600;
 }
-.HasNew {
+/*.HasNew {
   background-color: #54c0c0;
   font-size: 0.75rem;
   color: white;
   border-radius: 0;
-}
+}*/
 
 .Discussion .Summary {
   align-self: flex-end;
@@ -1035,6 +1108,7 @@ mark {
   display: none;
 }
 .FormWrapper .Buttons .PreviewButton,
+.CategoryBox .PreviewButton a,
 .FormWrapper .Buttons .WriteButton,
 .FormWrapper .Buttons .Cancel  {
   margin: 0;
@@ -1043,6 +1117,7 @@ mark {
   background-color: transparent;
 }
 .FormWrapper .Buttons .PreviewButton:hover,
+.CategoryBox .PreviewButton a:hover,
 .FormWrapper .Buttons .WriteButton:hover,
 .FormWrapper .Buttons .Cancel:hover  {
   color: #002a3a;
@@ -1151,14 +1226,25 @@ a.Cancel {
   display: none;
 }
 /* Profile Sidebar */
-.BoxProfileFilter {
-  margin-top: 25px;
+.BoxProfileFilter,
+.BoxCategories {
+  margin: 15px 0;
   padding: 0 25px;
   width: 126px;
   background-color: #FFF;
   border: 1px solid #b3bec3;
 }
-.BoxProfileFilter li a {
+.BoxCategories {
+  width: initial;
+}
+.BoxCategories .Active {
+  background: none;
+}
+.BoxCategories .PanelCategories .Depth2 {
+  padding-left: 0;
+}
+.BoxProfileFilter li a,
+.BoxCategories li a {
   font-size: 0.875rem !important;
   font-weight: 600;
   font-family: 'dattofont';
@@ -1169,18 +1255,27 @@ a.Cancel {
   vertical-align: middle;
 
 }
-.BoxProfileFilter .Active a,
-.BoxProfileFilter li a:hover {
+.BoxProfileFilter .Active ,
+.BoxCategories .Active a,
+.BoxProfileFilter li a:hover,
+.BoxCategories li a:hover {
   color: #199ed9;
 }
-.BoxProfileFilter li a {
+.BoxProfileFilter li a,
+.BoxCategories li a {
   color: #81949b;
 }
-.BoxProfileFilter li {
+.BoxProfileFilter li,
+.BoxCategories li {
   padding: 8px 0 5px;
   border-bottom: 1px solid #b3bec3;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
-.BoxProfileFilter li:last-child {
+.BoxProfileFilter li:last-child,
+.BoxCategories li:last-child,
+.BoxCategories .Depth2:last-child {
   border: none;
 }
 .Count {
@@ -1194,6 +1289,14 @@ a.Cancel {
   -webkit-border-radius: 0;
   -moz-border-radius: 0;
   border-radius: 0;
+}
+.BoxCategories .Heading,
+.BoxCategories h4 {
+  display: none;
+}
+
+#Panel .FilterMenu li:first-child, .PanelInfo li:first-child {
+  border-top: none;
 }
 
 .User {

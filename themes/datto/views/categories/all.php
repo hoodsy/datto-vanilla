@@ -212,9 +212,9 @@ foreach ($this->data('Categories') as $CategoryRow) {
                 .'</div>'
 
                 // Display RSS Data
-                .$rssData[0]
-                .$rssData[1]
-                .$rssData[2]
+                // .$rssData[0]
+                // .$rssData[1]
+                // .$rssData[2]
 
                   .'<div class="Meta">
                      <span class="MItem RSS">'.anchor(img('applications/dashboard/design/images/rss.gif', array('alt' => T('RSS Feed'))), '/categories/'.$Category->UrlCode.'/feed.rss', '', array('title' => T('RSS Feed'))).'</span>

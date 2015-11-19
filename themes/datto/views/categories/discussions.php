@@ -1,5 +1,6 @@
 <?php if (!defined('APPLICATION')) exit();
-echo '<h1 class="H HomepageTitle">'.$this->data('Title').'</h1>';
+// echo '<h1 class="H HomepageTitle">'.$this->data('Title').'</h1>';
+echo '<h1 class="H discussions-label">Categories</h1>';
 $ViewLocation = $this->fetchViewLocation('discussions', 'discussions');
 ?>
 <div class="Categories">
@@ -14,18 +15,19 @@ $ViewLocation = $this->fetchViewLocation('discussions', 'discussions');
 
             <div class="CategoryBox Category-<?php echo $Category->UrlCode; ?>">
                 <?php echo GetOptions($Category); ?>
-                <h2 class="H"><?php
+                <h2 class="H TitleWrap"><?php
                     echo anchor(htmlspecialchars($Category->Name), CategoryUrl($Category));
                     Gdn::controller()->EventArguments['Category'] = $Category;
                     Gdn::controller()->fireEvent('AfterCategoryTitle');
                     ?></h2>
+                <div class="CategoryDescription"><?php echo $Category->Description; ?></div>
 
                 <ul class="DataList Discussions">
                     <?php include($this->fetchViewLocation('discussions', 'discussions')); ?>
                 </ul>
 
                 <?php if ($this->DiscussionData->numRows() == $this->DiscussionsPerCategory) : ?>
-                    <div class="MorePager">
+                    <div class="MorePager PreviewButton">
                         <?php echo anchor(t('More Discussions'), '/categories/'.$Category->UrlCode); ?>
                     </div>
                 <?php endif; ?>

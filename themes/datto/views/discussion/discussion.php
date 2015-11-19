@@ -50,14 +50,15 @@ $this->fireEvent('BeforeDiscussionDisplay');
             </span>
             </div>
             <div class="Meta DiscussionMeta">
-            <span class="MItem DateCreated">
-               <?php
-               echo anchor(Gdn_Format::date($Discussion->DateInserted, 'html'), $Discussion->Url, 'Permalink', array('rel' => 'nofollow'));
-               ?>
-            </span>
-                <?php
+                <?php $dateUpdatedCreated = true;
                 echo DateUpdated($Discussion, array('<span class="MItem">', '</span>'));
                 ?>
+            <span class="MItem DateCreated">
+               <?php if (!$dateUpdatedCreated) {
+                echo anchor(Gdn_Format::date($Discussion->DateInserted, 'html'), $Discussion->Url, 'Permalink', array('rel' => 'nofollow'));
+               }
+               ?>
+            </span>
                 <?php
                 // Include source if one was set
                 if ($Source = val('Source', $Discussion))
