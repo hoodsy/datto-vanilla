@@ -54,9 +54,11 @@ $this->fireEvent('BeforeDiscussionDisplay');
                 echo DateUpdated($Discussion, array('<span class="MItem">', '</span>'));
                 ?>
             <span class="MItem DateCreated">
-               <?php if (!$dateUpdatedCreated) {
-                echo anchor(Gdn_Format::date($Discussion->DateInserted, 'html'), $Discussion->Url, 'Permalink', array('rel' => 'nofollow'));
-               }
+               <?php
+
+                if (!DateUpdated($Discussion, array('<span class="MItem">', '</span>'))) {
+                  echo anchor(Gdn_Format::date($Discussion->DateInserted, 'html'), $Discussion->Url, 'Permalink', array('rel' => 'nofollow'));
+                }
                ?>
             </span>
                 <?php
