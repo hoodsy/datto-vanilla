@@ -7,9 +7,20 @@
     <!-- Fontastic -->
     <link href="https://fontastic.s3.amazonaws.com/q3XbZVqTMGwGBcap5rtsJC/icons.css" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
+    <script>
+      dataLayer = [];
+    </script>
   </head>
   <body id="{$BodyID}" class="{$BodyClass}">
+    <!-- Google Tag Manager -->
+    <noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-MN3LHW"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    '//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-MN3LHW');</script>
+    <!-- End Google Tag Manager -->
 
     {asset name="NewDiscussionButton"}
     <header class="navbar" role="banner">
