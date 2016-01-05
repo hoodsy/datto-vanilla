@@ -127,7 +127,7 @@
       </div>
     {/if}
     <!-- Profile -->
-    {if $Conversation || $Conversations}
+    {if $Title == 'Inbox'}
       <div class="discussions-header">
         <div class="discussions-header-container">
           <div class="discussions-header-text">
@@ -156,6 +156,7 @@
          && !$Conversation
          && !$Discussion
          && !$Category
+   && $Title != 'Sign In'
         }
         <aside class="site-sidebar">
           {module name="NewDiscussionModule"}
@@ -165,8 +166,9 @@
             Selection="Announcements"
             Limit="5"
           }
+          {module name="DiscussionsModule"}
           <a class="Button sidebar-coc"
-            href="">
+            href="http://advisoryboard.dattobackup.com/discussion/196/code-of-conduct-datto-community-forum">
             Code of Conduct
           </a>
         </aside>
@@ -175,10 +177,12 @@
         {if $Discussion
          || $Category}
         <aside class="site-sidebar">
+  {if $Category.Name != "Announcements"}
           <a class="Button discussions-new-comment"
             href="#Form_Comment">
             New Comment
           </a>
+  {/if}
           {module name="NewDiscussionModule"}
           {module name="CategoriesModule"}
         </aside>
@@ -188,6 +192,7 @@
          && $Title != 'Edit Profile'
          && $Title != 'Change My Password'
          && $Title != 'Change Picture'
+         && $Title != 'Notification Preferences'
         }
         <aside class="site-sidebar">
           {module name="NewDiscussionModule"}
@@ -198,6 +203,7 @@
         {if $Title == 'Edit Profile'
          || $Title == 'Change My Password'
          || $Title == 'Change Picture'
+   || $Title == 'Notification Preferences'
         }
         <aside class="site-sidebar">
           {module name="NewDiscussionModule"}
@@ -206,17 +212,37 @@
               <li class="Active"><a href="/profile/edit">Edit Profile</a></li>
               <li><a href="/profile/password">Change Password</a></li>
               <li><a href="/profile/picture">Change Picture</a></li>
+              <li><a href="/profile/preferences">Preferences</a></li>
+        <li><a href="/profile/signature">Edit Signature</a></li>
             {/if}
             {if $Title == 'Change My Password'}
               <li><a href="/profile/edit">Edit Profile</a></li>
               <li class="Active"><a href="/profile/password">Change Password</a></li>
               <li><a href="/profile/picture">Change Picture</a></li>
+              <li><a href="/profile/preferences">Preferences</a></li>
+        <li><a href="/profile/signature">Edit Signature</a></li>
             {/if}
             {if $Title == 'Change Picture'}
               <li><a href="/profile/edit">Edit Profile</a></li>
               <li><a href="/profile/password">Change Password</a></li>
               <li class="Active"><a href="/profile/picture">Change Picture</a></li>
+              <li><a href="/profile/preferences">Preferences</a></li>
+        <li><a href="/profile/signature">Edit Signature</a></li>
             {/if}
+            {if $Title == 'My Signature'}
+              <li><a href="/profile/edit">Edit Profile</a></li>
+              <li><a href="/profile/password">Change Password</a></li>
+              <li><a href="/profile/picture">Change Picture</a></li>
+              <li><a href="/profile/preferences">Preferences</a></li>
+        <li class="Active"><a href="/profile/signature">Edit Signature</a></li>
+      {/if}
+            {if $Title == 'Notification Preferences'}
+              <li><a href="/profile/edit">Edit Profile</a></li>
+              <li><a href="/profile/password">Change Password</a></li>
+              <li><a href="/profile/picture">Change Picture</a></li>
+              <li class="Active"><a href="/profile/preferences">Preferences</a></li>
+        <li><a href="/profile/signature">Edit Signature</a></li>
+      {/if}
           </ul>
         </aside>
         {/if}
@@ -227,12 +253,8 @@
           {module name="NewConversationModule"}
         </aside>
         {/if}
-
       </div>
-
     </main>
-
-
 
     <!-- <footer class="site-footer" role="contentinfo">
       <div class="container">

@@ -33,6 +33,7 @@
 <div class="FormTitleWrapper">
     <h1 class="H"><?php echo $this->data('Title'); ?></h1>
 
+    <h4 class="H discussions-label">Notification Preferences</h4>
     <div class="Preferences">
         <?php
         echo $this->Form->open();

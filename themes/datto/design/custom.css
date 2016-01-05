@@ -1408,5 +1408,306 @@ li.token-input-token {
   }
 }
 
+/**
+ * Production Styles
+ * =================
+**/
 
+form[action="/profile/signature?"] h1,
+form[action="/profile/signature?"] .SignatureRules {
+  display: none;
+}
 
+form[action="/profile/signature?"] h2 {
+  margin: 25px 0;
+}
+
+.Profile .ReactionsWrap {
+  display: none;
+}
+
+.AdvancedSearch {
+  margin: 37px auto;
+  padding-right: 0;
+}
+.AdvancedSearch select {
+  font-size: 1rem;
+  vertical-align: initial;
+}
+.AdvancedSearch .Handle {
+  top: 5px;
+  right: 100px;
+}
+.AdvancedSearch .InputAndButton .bwrap {
+  top: 12px;
+  right: 10px;
+}
+
+.AdvancedSearch .AdvancedWrap input[type="text"],
+.AdvancedSearch .AdvancedWrap ul,
+.AdvancedSearch .KeywordsWrap input[type="text"] {
+  box-sizing: border-box;
+  height: 50px;
+  border-color: #b3bec3;
+}
+
+.DataList-Search .Breadcrumbs a {
+  color: #199ed9;
+}
+.DataList-Search .Breadcrumbs a:hover {
+  color: #002a3a;
+}
+.DataList-Search .Media-Body {
+  padding-left: 15px;
+}
+.DataList-Search .Item-Search h3 {
+  position: relative;
+  left: 55px;
+  font-family: "dattofont";
+  font-size: 1rem;
+}
+
+.navbar-meModule .Username, .MeBox-SignIn .SignInLinks a {
+    margin-bottom: -6px;
+    padding: 6px 15px 4px;
+    font-size: 0.875rem;
+    font-family: "dattofont";
+    text-transform: uppercase;
+    color: #FFF;
+    text-overflow: ellipsis;
+    -o-text-overflow:ellipsis;
+    white-space: nowrap;
+    max-width: 100px;
+    overflow: hidden;
+}
+
+.CategoryList .Category-datto-announcements {
+  display: none;
+}
+
+.sidebar-coc:focus {
+  background-color: white;
+}
+
+.AdminCheck {
+  position: relative;
+  top: -2px
+}
+
+.Reactions a {
+  font-size: 0.75rem;
+}
+.Reactions .Count {
+    background-color: #54c0c0;
+    font-size: 0.7rem;
+    color: white;
+    border-radius: 0;
+    line-height: 0.7rem;
+    margin: 0 2px;
+}
+
+.ReactionsWrap {
+  display: none;
+}
+
+.Tag-Poll {
+    background-color: #54c0c0;
+    font-size: 0.75rem;
+    font-weight: bold;
+    color: white;
+    padding-top: 4px;
+    border-radius: 0;
+}
+
+.DataList-Search {
+  padding: 15px;
+  margin-bottom: -1px;
+  background-color: #FFF;
+  border: 1px solid #b3bec3;
+}
+
+.js-poll-result-btn {
+    padding: 10px 15px 6px;
+    position: relative;
+    bottom: -2px;
+    text-transform: uppercase;
+    border: 1px solid transparent;
+    font-size: .875rem;
+    font-weight: bold;
+}
+.js-poll-result-btn:hover {
+  color: #002a3a;
+  background-color: #e5e9eb !important;
+  border: 1px solid #e5e9eb !important;
+}
+
+.Tag {
+    background-color: #54c0c0;
+    font-size: 0.75rem;
+    font-weight: bold;
+    color: white;
+    padding: 4px 5px 2px;
+    border-radius: 0;
+}
+.FormTitleWrapper > .FormWrapper {
+  padding: 0 !important;
+  margin: 0 !important;
+  border: none !important;
+}
+
+.PollColor1 {
+  border-color: #58c990;
+  background-color: #58c990;
+}
+.PollColor2 {
+  border-color: #f3523e;
+  background-color: #f3523e;
+}
+.PollColor3 {
+  border-color: #f6d93c;
+  background-color: #f6d93c;
+}
+.PollVoteAnswer {
+    top: 6px;
+    position: relative;
+    font-size: 0.875rem;
+}
+
+.ProfileOptions > .NavButton {
+  position: relative;
+  right: 25px;
+}
+
+.BoxProfileFilter .Active,
+.BoxProfileFilter .Active a,
+.BoxCategories .Active a,
+.BoxProfileFilter li a:hover,
+.BoxCategories li a:hover {
+  color: #199ed9;
+}
+
+.PromotedGroup .Title {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    -o-text-overflow:ellipsis;
+}
+
+.fontify-promoted-icon:before {
+    top: 1px;
+    position: relative;
+}
+
+.Discussion .discussion-info {
+    width: 80%;
+}
+.Discussions .Discussion .Title {
+    text-overflow: ellipsis;
+    -o-text-overflow:ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.site-row {
+  margin: 25px 0 0;
+}
+
+.CategoryBox .Discussions > .Item .Title a:hover {
+  color: #002a3a;
+}
+
+.Item-Search .Media-Body div:nth-child(3) {
+  display: none;
+}
+
+.BoxProfileFilter li a,
+.BoxCategories li a,
+.Discussions .Discussion .Title a,
+.BoxPromoted .PromotedGroup .Item .Title a {
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    text-align: left;
+}
+
+.Discussions .Discussion .Title {
+  display: flex;
+}
+.Discussions .Discussion .Title .AdminCheck {
+  position: initial;
+  float: left;
+}
+
+@-moz-document url-prefix() {
+
+  .BoxCategories li a,
+  .BoxProfileFilter li a,
+  .Discussions .Discussion .Title a,
+  .BoxPromoted .PromotedGroup .Item .Title a {
+    white-space: normal;
+  }
+
+}
+
+.MenuItems a:hover {
+  color: #002a3a !important;
+}
+.Button.Handle:focus {
+    border: 1px solid #199ed9 !important;
+    border-color: #199ed9 !important;
+    background-color: #FFF !important;
+    background: #FFF !important;
+}
+.ButtonGroup.Big .Button:focus .Sprite {
+    border-color: #199ed9 transparent transparent transparent;
+}
+
+/*
+Margaret's Changes
+*/
+
+.MeBox .Flyout.FlyoutMenu {
+  white-space: inherit;
+  width: 300px;
+}
+
+.MenuButtons {
+  margin: 5px;
+}
+
+/* Sidebar: Recent Discussions */
+.site-sidebar .BoxDiscussions .Meta {
+  display: none;
+}
+
+.site-sidebar .BoxDiscussions li {
+  border-bottom: none;
+  padding: 0 0 5px;
+  line-height: 1.5rem;
+}
+.site-sidebar .BoxDiscussions li:nth-child(n+6) {
+  display: none;
+}
+.site-sidebar .BoxDiscussions li a {
+  font-size: 1rem;
+}
+.site-sidebar .BoxDiscussions li .Options {
+  display: none;
+}
+.site-sidebar .BoxDiscussions h4 {
+    margin-bottom: 5px;
+    color: #b3bec3;
+    font-family: 'dattofont-condensed-bold';
+    font-size: 1.5rem;
+    text-transform: uppercase;
+}
+
+.site-sidebar .BoxDiscussions .Read .Title a {
+  color: #199ed9 !important;
+  opacity: 1 !important;
+  font-weight: bold;
+}
+.site-sidebar .BoxDiscussions .Read .Title a:hover {
+  color: #002a3a !important;
+}
