@@ -7,11 +7,14 @@
     <!-- Fontastic -->
     <link href="https://fontastic.s3.amazonaws.com/q3XbZVqTMGwGBcap5rtsJC/icons.css" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    {literal}
     <script>
       dataLayer = [];
     </script>
+    {/literal}
   </head>
   <body id="{$BodyID}" class="{$BodyClass}">
+    {literal}
     <!-- Google Tag Manager -->
     <noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-MN3LHW"
     height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
@@ -21,6 +24,7 @@
     '//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
     })(window,document,'script','dataLayer','GTM-MN3LHW');</script>
     <!-- End Google Tag Manager -->
+    {/literal}
 
     {asset name="NewDiscussionButton"}
     <header class="navbar" role="banner">
