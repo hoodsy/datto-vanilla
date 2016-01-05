@@ -22,9 +22,10 @@ if ($this->data('_PagerUrl'))
         <h2 class="Hidden"><?php echo $this->data('Title'); ?></h2>
         <ul class="Condensed DataList Conversations">
             <?php
-            if (count($this->data('Conversations') > 0)):
-                $ViewLocation = $this->fetchViewLocation('conversations');
-                include $ViewLocation;
+            $messageCount = count($this->data('Conversations'));
+            if ($messageCount >= 1):
+              $ViewLocation = $this->fetchViewLocation('conversations');
+              include $ViewLocation;
             else:
                 ?>
                 <li class="Item Empty Center"><?php echo sprintf(t('You do not have any %s yet.'), t('messages')); ?></li>
