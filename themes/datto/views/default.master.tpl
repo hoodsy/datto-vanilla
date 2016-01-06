@@ -7,13 +7,20 @@
     <!-- Fontastic -->
     <link href="https://fontastic.s3.amazonaws.com/q3XbZVqTMGwGBcap5rtsJC/icons.css" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    {literal}
-    <script>
-      dataLayer = [];
-    </script>
-    {/literal}
   </head>
   <body id="{$BodyID}" class="{$BodyClass}">
+    {debug}
+
+    {if $Discussion}
+      <script>
+        dataLayer = [{ldelim}
+          discussionTitle: '{$Title}',
+          discussionCategory: '{$Category.Name}'
+        {rdelim}]
+        console.log(dataLayer);
+      </script>
+    {/if}
+
     {literal}
     <!-- Google Tag Manager -->
     <noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-MN3LHW"
