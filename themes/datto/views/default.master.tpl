@@ -9,7 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
   </head>
   <body id="{$BodyID}" class="{$BodyClass}">
-    {debug}
+    <!-- {debug} -->
 
     {if $Discussion}
       <script>

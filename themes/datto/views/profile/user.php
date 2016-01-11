@@ -4,9 +4,24 @@ $Session = Gdn::session();
 <h4 class="H discussions-label">About</h4>
 <div class="User" itemscope itemtype="http://schema.org/Person">
     <?php
-    $Photo = userPhoto($Row, array('LinkClass' => 'Img'));
-    if ($Photo) {
+    // $Photo = userPhoto($Row, array('LinkClass' => 'Img'));
+    // if ($Photo) {
+    //     echo $Photo;
+    // }
+    // Define the current profile picture
+    $Picture = '';
+    if ($this->User->Photo != '') {
+      if (IsUrl($this->User->Photo)) {
+        $Picture = img($this->User->Photo, array('class' => 'ProfilePhoto'));
+      } else {
+        $Picture = img(Gdn_Upload::url(changeBasename($this->User->Photo, 'p%s')), array('class' => 'ProfilePhoto'));
+      }
+      echo $Picture;
+    } else {
+      $Photo = userPhoto($Row, array('LinkClass' => 'Img'));
+      if ($Photo) {
         echo $Photo;
+      }
     }
     ?>
     <div class="profile-info">
